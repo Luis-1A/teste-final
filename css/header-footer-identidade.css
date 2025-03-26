@@ -6,6 +6,7 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
+    color: black;
 }
 
 main {
@@ -27,14 +28,14 @@ main {
 
 h1 {
     font-size: 32px;
-    color: #002b6d;
+    color: black;
     font-weight: 900;
     line-height: 42px;
     text-transform: uppercase;
 }
 
 a {
-    color: #ffffff;
+    color: black;
     margin-left: 50px;
     font-size: 20px;
     font-weight: 700;
@@ -47,12 +48,12 @@ a:hover {
 }
 
 h2 {
-    color: #004aad;
+    color: black;
     font-weight: 700;
 }
 
 li, p {
-    color: #ffffff;
+    color: black;
     font-size: 18px;
     font-weight: 400;
     margin-top: 5px;
@@ -142,7 +143,7 @@ footer {
     flex-direction: column;
     position: relative;
     bottom: 0;
-    color: white;
+    color: black;
     padding: 20px;
     text-align: center;
     animation: fadeIn 1.5s ease-in-out;
