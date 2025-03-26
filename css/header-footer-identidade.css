@@ -26,7 +26,7 @@ main{
 h1{
     font-size: 30px;
     margin-left: 5px;
-    color: #008000;
+    color: #141614;
     font-weight: 800;
     line-height: 40px;
 }
@@ -43,7 +43,7 @@ a{
 }
 a:hover{
     transition: 0.1s all;
-    color: #008000;
+    color: #555f55;
     font-size: 20.2px;
 }
 
