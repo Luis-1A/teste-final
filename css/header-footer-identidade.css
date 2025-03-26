@@ -10,7 +10,7 @@
 
 main{
     padding-top: 50px;
-    background: url(../imagens/header-footer/background-pontos.png), rgb(41, 41, 41);
+    background: url(../imagens/header-footer/background-pontos.png), rgb(164, 160, 160);
 }
 
 .espaco{
@@ -63,7 +63,7 @@ li , p{
 header{
     display: flex;
     flex-direction: column;
-    background: url(../imagens/header-footer/background-pontos.png), rgb(41, 41, 41);
+    background: url(../imagens/header-footer/background-pontos.png), rgb(117, 115, 115);
     position: sticky;
     top: 0;
     width: 100%;
@@ -285,7 +285,7 @@ p{
         flex-direction: column;
         align-items: center;
         text-align: center;
-        background-color: rgb(48, 48, 48);
+        background-color: rgb(173, 169, 169);
     }
 
     .div-contact, .redes-sociais-footer{
