@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 main {
@@ -16,6 +16,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .espaco,
@@ -25,35 +26,36 @@ main {
 }
 
 h1 {
-    font-size: 30px;
-    margin-left: 5px;
+    font-size: 32px;
     color: #002b6d;
-    font-weight: 800;
-    line-height: 40px;
+    font-weight: 900;
+    line-height: 42px;
+    text-transform: uppercase;
 }
 
 a {
     color: #ffffff;
     margin-left: 50px;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 700;
     transition: 0.3s;
 }
 
 a:hover {
     color: #00aaff;
-    font-size: 20.2px;
+    transform: scale(1.05);
 }
 
 h2 {
     color: #004aad;
+    font-weight: 700;
 }
 
 li, p {
     color: #ffffff;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
-    margin-top: 3px;
+    margin-top: 5px;
 }
 
 /************************ HEADER ************************/
@@ -66,6 +68,8 @@ header {
     width: 100%;
     z-index: 1000;
     backdrop-filter: blur(5px);
+    padding: 10px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .secao {
@@ -73,7 +77,6 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    margin-top: 10px;
     height: 90px;
 }
 
@@ -97,20 +100,21 @@ nav {
 
 .input-text-pesquisa {
     width: 350px;
-    height: 25px;
+    height: 35px;
     border-radius: 10px;
-    padding: 15px;
+    padding: 10px;
     border: 2px solid #004aad;
 }
 
 .button-pesquisa {
-    height: 30px;
-    width: 70px;
+    height: 35px;
+    width: 80px;
     border-radius: 10px;
     border: 2px solid #004aad;
     color: #004aad;
     transition: 0.3s;
     cursor: pointer;
+    font-weight: 700;
 }
 
 .button-pesquisa:hover {
@@ -139,6 +143,9 @@ footer {
     position: relative;
     bottom: 0;
     color: white;
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .div-footer-content {
@@ -154,8 +161,17 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes slideInLeft {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
 .aparecer {
     animation: fadeIn 1s ease-in-out;
+}
+
+.slide-left {
+    animation: slideInLeft 1s ease-in-out;
 }
 
 /************************ BOTÃO FIXO WHATSAPP ************************/
@@ -170,10 +186,11 @@ footer {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+    font-weight: 700;
 }
 
 .whatsapp-button:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 /************************ RESPONSIVIDADE ************************/
