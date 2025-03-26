@@ -168,7 +168,7 @@ button, input{
 
 /************************FOOTER************************/
 footer{
-    background-color: rgb(48, 48, 48);
+    background-color: rgb(116, 112, 112);
     height: 300px;
     width: 100%;
     display: flex;
@@ -259,7 +259,7 @@ label{
 .espaco{
     height: 80px;
     background-attachment: fixed;
-    background-color: rgb(34, 34, 33);
+    background-color: rgb(118, 118, 115);
     background: url(../imagens/header-footer/background-pontos.png), rgb(41, 41, 41);
 }
 
