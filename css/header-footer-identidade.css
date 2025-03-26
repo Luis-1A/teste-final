@@ -1,76 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
-main{
+main {
     padding-top: 50px;
-    background: url(../imagens/header-footer/background-pontos.png), rgb(164, 160, 160);
+    background: linear-gradient(to bottom, #e6f2ff, #b3d9ff);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.espaco{
+.espaco,
+.espaco-main-footer {
     width: 100%;
     height: 50px;
 }
 
-.espaco-main-footer{
-    width: 100%;
-    height: 50px;  
-}
-
-h1{
+h1 {
     font-size: 30px;
     margin-left: 5px;
-    color: #141614;
+    color: #002b6d;
     font-weight: 800;
     line-height: 40px;
 }
 
-a{
-    color: aliceblue;
+a {
+    color: #ffffff;
     margin-left: 50px;
     font-size: 20px;
     font-weight: 400;
-    text-decoration: none;
+    transition: 0.3s;
 }
-.redes-sociais-footer a{
-    margin-left: 0;
-}
-a:hover{
-    transition: 0.1s all;
-    color: #555f55;
+
+a:hover {
+    color: #00aaff;
     font-size: 20.2px;
 }
 
-h2{
-    color: #008000;
+h2 {
+    color: #004aad;
 }
 
-li , p{
-    color: aliceblue;
+li, p {
+    color: #ffffff;
     font-size: 16px;
     font-weight: 400;
     margin-top: 3px;
 }
 
-
-/************************HEADER************************/
-header{
+/************************ HEADER ************************/
+header {
     display: flex;
     flex-direction: column;
-    background: url(../imagens/header-footer/background-pontos.png), rgb(117, 115, 115);
+    background: linear-gradient(to right, #004aad, #0073e6);
     position: sticky;
     top: 0;
     width: 100%;
-    z-index: 1000; /*Serve para o elemtento ficar acima dos outros, quanto maior for o seu número*/
+    z-index: 1000;
+    backdrop-filter: blur(5px);
 }
 
-.secao{
+.secao {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -79,219 +77,139 @@ header{
     height: 90px;
 }
 
-nav{
+nav {
     height: 90px;
     line-height: 30px;
     display: flex;
     align-items: center;
 }
 
-.link-header{
+.link-header {
     margin-left: 50px;
 }
 
-.div-marca{
+.div-marca {
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 80px;
-
 }
 
-.input-text-pesquisa{
+.input-text-pesquisa {
     width: 350px;
     height: 25px;
     border-radius: 10px;
     padding: 15px;
-    border: 2px solid #008000;
+    border: 2px solid #004aad;
 }
 
-.button-pesquisa{
+.button-pesquisa {
     height: 30px;
     width: 70px;
     border-radius: 10px;
-
-    border: 2px solid #008000;
-    color: #008000;
-}
-.button-pesquisa:hover{
-    transition: 0.4s all;
-    background-color: #008000;
-    color: aliceblue;
+    border: 2px solid #004aad;
+    color: #004aad;
+    transition: 0.3s;
     cursor: pointer;
 }
 
-.espaco-header{
-    background-color: #008000;
+.button-pesquisa:hover {
+    background-color: #004aad;
+    color: white;
+}
+
+.espaco-header {
+    background-color: #004aad;
     height: 25px;
 }
 
 .fechamento-footer-green, .fechamento-header-green {
     width: 100%;
     height: 5px;
-    background-color: #008000;
+    background-color: #004aad;
 }
 
-/*Para o bootstrap não distorcer*/
-button, input{
-    font-size: 14px;
-}
-
-@media (max-width: 1187px){
-    nav{
-        display: flex;
-        flex-direction: column;
-    }
-}
-@media (max-width: 981px){
-    .form-pesquisa{
-        display: none;
-    }
-    nav{
-        width: 300px;
-    }
-    
-}
-@media (max-width: 517px){
-    nav{
-        width: 300px;
-    }
-    a{
-        font-size: 17px;
-    }
-    a:hover{
-        font-size: 17.2px;
-    }
-}
-/******************************************************/
-
-
-/************************FOOTER************************/
-footer{
-    background-color: rgb(255, 255, 255);
+/************************ FOOTER ************************/
+footer {
+    background: linear-gradient(to right, #002b6d, #004aad);
     height: 300px;
     width: 100%;
     display: flex;
     flex-direction: column;
     position: relative;
     bottom: 0;
+    color: white;
 }
 
-label{
-    font-size: 20px;
-    color: #008000;
-    font-weight: 400;
-}
-
-.div-footer-content{
+.div-footer-content {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding: 15px;
 }
 
-.form-login{
-    display: flex;
-    flex-direction: column;
-    /* margin-left: 100px; */
+/************************ ANIMAÇÕES ************************/
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.input-text-login{
-    width: 200px;
-    height: 30px;
-    border: 2px solid #008000;
-    border-radius: 10px ;
-    padding: 5px;
-    margin-top: 3px;
+.aparecer {
+    animation: fadeIn 1s ease-in-out;
 }
 
-.input-senha-login{
-    width: 200px;
-    height: 30px;
-    border: 2px solid #008000;
-    border-radius: 10px;
-    padding: 5px;
-    margin-top: 3px;
-}
-
-.input-submit-login{
-    width: 75px;
-    border-radius: 10px;
-    padding: 5px;
-    border: 2px solid #008000;
-    color: #008000;
-    margin-top: 3px;
-}
-.input-submit-login:hover{
-    transition: 0.4s all;
-    background-color: #008000;
-    color: aliceblue;
+/************************ BOTÃO FIXO WHATSAPP ************************/
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
-.redes-sociais-footer{
-    width: 300px;
-    display: flex;
-    align-items: center; 
-    justify-content: space-around;
-
-
-    transform: translateY(0px);
-    animation: float 5s ease-in-out infinite;
+.whatsapp-button:hover {
+    transform: scale(1.1);
 }
-@keyframes float {
-    0%{
-        transform: translateY(0px);
-    }
-    50%{
-        transform: translateY(-15px);
-    }
-    100%{
-        transform: translateY(0px);
+
+/************************ RESPONSIVIDADE ************************/
+@media (max-width: 1187px) {
+    nav {
+        display: flex;
+        flex-direction: column;
     }
 }
 
-.label-login, .input-submit-login, .titulo-contact-us{
-    margin-left: auto;
-    margin-right: auto;
+@media (max-width: 981px) {
+    .form-pesquisa {
+        display: none;
+    }
+    nav {
+        width: 300px;
+    }
 }
 
-.espaco{
-    height: 80px;
-    background-attachment: fixed;
-    background-color: rgb(118, 118, 115);
-    background: url(../imagens/header-footer/background-pontos.png), rgb(41, 41, 41);
+@media (max-width: 517px) {
+    nav {
+        width: 300px;
+    }
+    a {
+        font-size: 17px;
+    }
 }
 
-p{
-    margin: 0;
-}
-.div-contact{
-    line-height: 30px;
-}
-.titulo-contact-us{
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 40px;
-    text-align: center;
-}
-
-@media (max-width: 760px){
-    footer{
+@media (max-width: 760px) {
+    footer {
         height: 530px;
     }
-    .div-footer-content{
+    .div-footer-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        background-color: rgb(173, 169, 169);
-    }
-
-    .div-contact, .redes-sociais-footer{
-        margin-top: 15px;
-    }
-    .espaco{
-        padding: 15px 0px 15px 0px;
     }
 }
