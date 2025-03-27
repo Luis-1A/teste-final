@@ -10,7 +10,7 @@
 
 main{
     padding-top: 50px;
-    background: url(../imagens/header-footer/background-pontos.png), rgb(164, 160, 160);
+    background: url(../imagens/header-footer/background-pontos.png), rgb(41, 41, 41);
 }
 
 .espaco{
@@ -26,7 +26,7 @@ main{
 h1{
     font-size: 30px;
     margin-left: 5px;
-    color: #141614;
+    color: #008000;
     font-weight: 800;
     line-height: 40px;
 }
@@ -43,7 +43,7 @@ a{
 }
 a:hover{
     transition: 0.1s all;
-    color: #555f55;
+    color: #008000;
     font-size: 20.2px;
 }
 
@@ -63,7 +63,7 @@ li , p{
 header{
     display: flex;
     flex-direction: column;
-    background: url(../imagens/header-footer/background-pontos.png), rgb(117, 115, 115);
+    background: url(../imagens/header-footer/background-pontos.png), rgb(41, 41, 41);
     position: sticky;
     top: 0;
     width: 100%;
@@ -168,7 +168,7 @@ button, input{
 
 /************************FOOTER************************/
 footer{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(48, 48, 48);
     height: 300px;
     width: 100%;
     display: flex;
@@ -259,7 +259,7 @@ label{
 .espaco{
     height: 80px;
     background-attachment: fixed;
-    background-color: rgb(118, 118, 115);
+    background-color: rgb(34, 34, 33);
     background: url(../imagens/header-footer/background-pontos.png), rgb(41, 41, 41);
 }
 
@@ -285,7 +285,7 @@ p{
         flex-direction: column;
         align-items: center;
         text-align: center;
-        background-color: rgb(173, 169, 169);
+        background-color: rgb(48, 48, 48);
     }
 
     .div-contact, .redes-sociais-footer{
