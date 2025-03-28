@@ -295,7 +295,6 @@ p{
         padding: 15px 0px 15px 0px;
     }
 }
-
 nav a {
     display: inline-block; /* Faz os links ficarem em linha, mas com comportamento de bloco */
     padding: 15px 30px; /* Adiciona preenchimento ao redor do texto */
@@ -314,10 +313,19 @@ nav a:hover {
     transform: scale(1.1); /* Aumenta o tamanho do quadrado ao passar o mouse */
 }
 
-@media (max-width: 480px) { /* Para dispositivos com largura de tela até 480px (celulares) */
+/* Para telas pequenas (celulares) */
+@media (max-width: 480px) {
+    /* Ocultar o link "Home" apenas em telas pequenas */
+    nav a[href="index.html"] {
+        display: none;
+    }
+
+    /* Ajustar os links para exibir apenas "Serviços" e "Quem Somos" */
     nav a {
-        padding: 10px 20px; /* Reduz o padding para celulares */
-        font-size: 14px; /* Diminui o tamanho da fonte para celulares */
-        margin: 3px; /* Ajusta o espaçamento entre os links */
+        padding: 12px; /* Ajusta o padding para botões menores */
+        font-size: 14px; /* Diminui o tamanho da fonte */
+        border-radius: 50%; /* Torna os botões redondos */
+        margin: 5px; /* Mantém o espaço entre os botões */
+        text-align: center; /* Garante que o texto esteja centralizado */
     }
 }
