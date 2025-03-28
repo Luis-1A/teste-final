@@ -295,3 +295,19 @@ p{
         padding: 15px 0px 15px 0px;
     }
 }
+
+
+
+
+
+
+
+.logo {
+    width: 80px;
+    transition: transform 0.3s ease; /* Efeito de transição suave */
+  }
+  
+  .logo:hover {
+    transform: scale(1.2); /* Aumenta a imagem 20% */
+  }
+  
