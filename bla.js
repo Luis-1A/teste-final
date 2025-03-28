@@ -1,37 +1,46 @@
-// Função para ajustar os links conforme o tamanho da tela
-function adjustNavLinks() {
-    // Obtém todos os links de navegação
-    const navLinks = document.querySelectorAll('nav a');
+document.addEventListener("DOMContentLoaded", function () {
+    function adjustNavLinks() {
+        const nav = document.querySelector("nav");
+        const links = document.querySelectorAll("nav a");
 
-    // Verifica a largura da tela
-    if (window.innerWidth <= 480) {
-        // Em telas pequenas, esconde o link "Home"
-        navLinks.forEach(link => {
-            if (link.href.includes('index.html')) {
-                link.style.display = 'none';
-            } else {
-                // Torna os botões redondos e ajusta o tamanho
-                link.style.padding = '12px';
-                link.style.fontSize = '14px';
-                link.style.borderRadius = '50%';  // Botões redondos
-                link.style.margin = '5px';
-                link.style.textAlign = 'center'; // Centraliza o texto
-            }
-        });
-    } else {
-        // Em telas grandes, mostra todos os links
-        navLinks.forEach(link => {
-            link.style.display = 'inline-block';
-            link.style.padding = '15px 30px';
-            link.style.fontSize = '16px';
-            link.style.borderRadius = '8px'; // Bordas quadradas
-            link.style.margin = '5px';
-        });
+        if (window.innerWidth <= 480) {
+            links.forEach(link => {
+                if (link.href.includes("index.html")) {
+                    link.style.display = "none"; // Esconde "Home"
+                } else {
+                    link.style.display = "inline-block";
+                    link.style.padding = "12px";
+                    link.style.fontSize = "14px";
+                    link.style.width = "50px";  // Largura fixa
+                    link.style.height = "50px"; // Altura fixa
+                    link.style.borderRadius = "50%"; // Borda arredondada
+                    link.style.textAlign = "center";
+                    link.style.lineHeight = "50px"; // Centraliza o texto
+                    link.style.margin = "5px";
+                    link.style.backgroundColor = "#001580"; // Cor de fundo
+                    link.style.color = "white"; // Cor da fonte
+                }
+            });
+
+            nav.style.display = "flex";
+            nav.style.justifyContent = "center";
+            nav.style.gap = "10px"; // Espaçamento entre botões
+        } else {
+            links.forEach(link => {
+                link.style.display = "inline-block";
+                link.style.padding = "15px 30px";
+                link.style.fontSize = "16px";
+                link.style.borderRadius = "8px";
+                link.style.width = "auto";
+                link.style.height = "auto";
+                link.style.lineHeight = "normal";
+                link.style.backgroundColor = "transparent"; // Remove fundo
+                link.style.color = "#001580"; // Cor do texto normal
+            });
+        }
     }
-}
 
-// Chama a função quando a página carrega
-window.addEventListener('load', adjustNavLinks);
-
-// Chama a função sempre que a tela for redimensionada
-window.addEventListener('resize', adjustNavLinks);
+    // Executa a função ao carregar a página e ao redimensionar a tela
+    adjustNavLinks();
+    window.addEventListener("resize", adjustNavLinks);
+});
