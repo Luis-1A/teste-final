@@ -296,8 +296,6 @@ p{
     }
 }
 
-
-
 nav a {
     display: inline-block; /* Faz os links ficarem em linha, mas com comportamento de bloco */
     padding: 15px 30px; /* Adiciona preenchimento ao redor do texto */
@@ -316,10 +314,10 @@ nav a:hover {
     transform: scale(1.1); /* Aumenta o tamanho do quadrado ao passar o mouse */
 }
 
-@media (max-width: 768px) { /* Para dispositivos com largura de tela até 768px */
+@media (max-width: 480px) { /* Para dispositivos com largura de tela até 480px (celulares) */
     nav a {
-        padding: 10px 20px; /* Reduz o padding */
-        font-size: 14px; /* Diminui o tamanho da fonte */
+        padding: 10px 20px; /* Reduz o padding para celulares */
+        font-size: 14px; /* Diminui o tamanho da fonte para celulares */
         margin: 3px; /* Ajusta o espaçamento entre os links */
     }
 }
