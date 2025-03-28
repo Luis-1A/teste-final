@@ -298,16 +298,20 @@ p{
 
 
 
-
-
-
-
-.logo {
+.image-container {
+    display: inline-block; /* Deixa a imagem com contorno */
+    background-color: white; /* Fundo branco */
+    padding: 10px; /* Espaçamento entre a imagem e o fundo branco */
+    border-radius: 10px; /* Cantos arredondados */
+  }
+  
+  .logo {
     width: 80px;
     transition: transform 0.3s ease; /* Efeito de transição suave */
   }
   
   .logo:hover {
-    transform: scale(1.2); /* Aumenta a imagem 20% */
+    transform: scale(1.5); /* Aumenta a imagem 50% */
   }
+  
   
