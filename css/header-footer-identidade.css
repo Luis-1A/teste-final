@@ -179,7 +179,7 @@ footer{
 
 label{
     font-size: 20px;
-    color: #e7e9e7;
+    color: #008000;
     font-weight: 400;
 }
 
@@ -298,3 +298,20 @@ p{
 
 
 
+nav a {
+    display: inline-block; /* Faz os links ficarem em linha, mas com comportamento de bloco */
+    padding: 15px 30px; /* Adiciona preenchimento ao redor do texto */
+    background-color: #f0f0f0; /* Cor de fundo do quadrado */
+    color: #333; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    border: 2px solid #ccc; /* Borda do quadrado */
+    border-radius: 8px; /* Cantos arredondados */
+    margin: 5px; /* Espaço entre os links */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave */
+}
+
+nav a:hover {
+    background-color: #001580; /* Altera a cor de fundo ao passar o mouse */
+    color: white; /* Muda a cor do texto */
+    transform: scale(1.1); /* Aumenta o tamanho do quadrado ao passar o mouse */
+}
