@@ -406,18 +406,44 @@ p {
   }
   .logo-container {
     background-color: white; /* Fundo branco */
-    width: 120px; /* Tamanho do quadrado */
-    height: 100px; /* Quadrado perfeito */
-    display: flex; /* Flexbox para centralizar */
-    justify-content: flex-start; /* Alinha à esquerda */
-    align-items: center; /* Mantém centralizado verticalmente */
-    padding-left: -30px; /* Move um pouquinho para a direita da borda esquerda */
+    width: 200px; /* Tamanho do quadrado */
+    height: 200px; /* Quadrado perfeito */
+    position: relative; /* Para posicionamento absoluto dos elementos internos */
     border-radius: 8px; /* Bordas arredondadas (opcional) */
-    overflow: hidden; /* Evita que a logo "vaze" */
+    overflow: hidden; /* Evita que elementos "vazem" */
+  }
+  
+  .cartesian-plane {
+    width: 100%;
+    height: 100%;
+    position: relative; /* Para os eixos e a logo serem posicionados em relação a este contêiner */
+  }
+  
+  /* Eixo X (horizontal) */
+  .axis-x {
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 0;
+    width: 100%; /* Ocupa toda a largura */
+    height: 2px; /* Espessura do eixo */
+    background-color: black; /* Cor do eixo */
+  }
+  
+  /* Eixo Y (vertical) */
+  .axis-y {
+    position: absolute;
+    left: 50%; /* Centraliza horizontalmente */
+    top: 0;
+    height: 100%; /* Ocupa toda a altura */
+    width: 2px; /* Espessura do eixo */
+    background-color: black; /* Cor do eixo */
   }
   
   .logo-img {
-    width: 180px; /* Tamanho da logo */
+    width: 50px; /* Tamanho menor para a logo, para caber bem no ponto (0,0) */
     height: auto; /* Mantém a proporção */
-    display: block; /* Remove espaçamento indesejado */
+    position: absolute; /* Posicionamento absoluto para colocá-la no ponto (0,0) */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para que o centro da logo fique no (0,0) */
   }
