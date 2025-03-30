@@ -404,15 +404,17 @@ p {
       display: block;
     }
   }
-
   .logo-container {
-    background-color: white; /* Fundo branco para o quadrado */
-    padding: 10px; /* Espaçamento interno para dar forma ao quadrado */
+    background-color: white; /* Fundo branco */
+    width: 150px; /* Largura igual ao tamanho da logo */
+    height: 150px; /* Altura igual à largura, formando um quadrado */
+    display: flex; /* Usa flexbox para centralizar a logo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
     border-radius: 8px; /* Bordas arredondadas (opcional) */
-    display: inline-block; /* Faz o contêiner se ajustar ao tamanho da imagem */
   }
   
   .logo-img {
-    width: 120px; /* Tamanho aumentado da logo */
-    height: auto; /* Mantém a proporção da imagem */
+    width: 150px; /* Tamanho aumentado da logo */
+    height: auto; /* Mantém a proporção original da imagem */
   }
