@@ -405,15 +405,15 @@ p {
     }
   }
   .logo-container {
-    background-color: white; /* Fundo branco */
-    width: 100px; /* Tamanho do quadrado */
-    height: 100px; /* Retângulo (não é um quadrado perfeito) */
-    display: flex; /* Flexbox para centralizar */
-    justify-content: flex-end; /* Alinha à direita */
-    align-items: center; /* Mantém centralizado verticalmente */
-    padding-left: 20px; /* Move um pouquinho para a esquerda a partir da borda direita */
-    border-radius: 8px; /* Bordas arredondadas (opcional) */
-    overflow: hidden; /* Evita que a logo "vaze" */
+    background-color: white;
+    width: 120px;
+    height: 120px; /* Quadrado perfeito */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+    border-radius: 8px;
+    overflow: hidden;
   }
   
   .logo-img {
