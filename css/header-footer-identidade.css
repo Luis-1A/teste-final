@@ -406,8 +406,8 @@ p {
   }
   .logo-container {
     background-color: white; /* Fundo branco */
-    width: 150px; /* Largura igual ao tamanho da logo */
-    height: 150px; /* Altura igual à largura, formando um quadrado */
+    width: 100px; /* Largura igual ao tamanho da logo */
+    height: 100px; /* Altura igual à largura, formando um quadrado */
     display: flex; /* Usa flexbox para centralizar a logo */
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
