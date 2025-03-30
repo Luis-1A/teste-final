@@ -404,3 +404,15 @@ p {
       display: block;
     }
   }
+
+  .logo-container {
+    background-color: white; /* Fundo branco para o quadrado */
+    padding: 10px; /* Espaçamento interno para dar forma ao quadrado */
+    border-radius: 8px; /* Bordas arredondadas (opcional) */
+    display: inline-block; /* Faz o contêiner se ajustar ao tamanho da imagem */
+  }
+  
+  .logo-img {
+    width: 120px; /* Tamanho aumentado da logo */
+    height: auto; /* Mantém a proporção da imagem */
+  }
