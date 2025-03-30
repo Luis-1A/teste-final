@@ -6,32 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/header-footer-identidade.css">
     <link rel="stylesheet" href="css/main/produtos.css">
     <link rel="stylesheet" href="css/main/index.css">
+    <link rel="stylesheet" href="css/menu.css"> <!-- Novo arquivo CSS -->
     <link rel="shortcut icon" href="imagens/header-footer/logo.png" type="image/x-icon"> 
-    <title> WB segurança Eletrônica</title>
+    <title>WB Segurança Eletrônica</title>
 </head>
 <body>
-    <header> <!--Inicio do cabeçalho-->
+    <header>
         <div class="espaco-header"></div>
-        <section class="secao"> <!--Inicio da seção do conteúdo do cabeçalho-->
+        <section class="secao">
             <div class="div-marca">
-                <!--Logo da marca-->
                 <a class="link-header" href="index.html"><img src="imagens/header-footer/logo.png" width="80px" alt=""></a>
-                <h1> WB segurança Eletrônica</h1>
+                <h1>WB Segurança Eletrônica</h1>
             </div>
-            
             <div id="calabresa">
-                <!-- Navegação padrão para desktop -->
                 <nav class="desktop-nav">
                     <a href="serviço.html">Serviços</a>
                     <a href="quem-somos.html">Empresa</a>
                 </nav>
-                <!-- Botão para celular -->
                 <button id="menu-toggle" class="menu-btn">Menu</button>
-                <!-- Overlay para celular -->
                 <div id="mobile-overlay" class="mobile-overlay">
                     <button id="close-overlay" class="close-btn">X</button>
                     <nav class="mobile-nav">
@@ -40,67 +35,51 @@
                     </nav>
                 </div>
             </div>
-                <nav class="desktop-nav"> <!-- Navegação padrão para desktop -->
-                    <a class="link-header" href="serviço.html">Serviços</a>
-                    <a class="link-header" href="quem-somos.html">Empresa</a>
-                </nav>
-            </div>
-            </div>
-        </section> <!--FIm da seção do conteúdo do cabeçalho-->
+        </section>
         <div class="espaco-header"></div>
-    </header> <!--Fim do cabeçalho-->
+    </header>
 
-    <main> <!--Inicio do Main-->
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel"> <!--Inicio do carrosel de imagens - Bootstrap-->
+    <main>
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
-                <!--Imagem 1 carrosel-->
-                <img src="imagens/index-main/banner.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <!--Imagem 2 carrosel-->
-                <img src="imagens/index-main/anuncio.png" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <!--Imagem 3 carrosel-->
-                <img src="imagens/index-main/black-friday.png" class="d-block w-100" alt="...">
-              </div>
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="imagens/index-main/banner.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="imagens/index-main/anuncio.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagens/index-main/black-friday.png" class="d-block w-100" alt="...">
+                </div>
             </div>
-            
-            <!--SETINHAS PARA PASSAR O CARROSEL-->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
             </button>
-        </div> <!--Fim do carrosel de imagens - Bootstrap-->
-        <!-- <img class="imagem-cpu" src="_imagens/index-main/cpu.jpg" alt=""> -->
+        </div>
 
         <div class="promocoes" data-aos="fade-right">
             <h2 class="text-promocoes">Promoções</h2>
         </div>
-        <ul class="product-list" data-aos="fade-right"> <!--Inicio da vitrine 1 em linha com 3 produtos-->
-            <li class="product-item"> <!--Produto 1-->
-                <a href="#" target="_blank" class="product-link"> <!--link do produto 1-->
+        <ul class="product-list" data-aos="fade-right">
+            <li class="product-item">
+                <a href="#" target="_blank" class="product-link">
                     <figure class="product-info">
                         <div class="product-info-img">
-                            <!--Imagem do produto 1-->
                             <img src="imagens/produtos/foto-7.png" alt="description image">
                         </div>
-                        <figcaption class="product-info-description"> <!--Inicio da área do titulo e estrelas do produto 1-->
+                        <figcaption class="product-info-description">
                             <h2 class="title">Vex 1050 HDMI</h2>
                             <p class="description">extensor de áudio e vídeo</p>
-                                <ul class="star-ranking">
-                                 
-                                    <li class="qtd-votes">
-                                        </span>full HD (1080p)</span>
-                                    </li>
-                                </ul>
-                        </figcaption> <!--Fim da área do titulo e estrelas do produto 1-->
-                        <div class="price-box"> <!--Inicio da área de preço do produto 1-->
+                            <ul class="star-ranking">
+                                <li class="qtd-votes">full HD (1080p)</li>
+                            </ul>
+                        </figcaption>
+                        <div class="price-box">
                             <div class="price">
                                 <div>
                                     <del>0000</del>
@@ -109,27 +88,23 @@
                                 <span class="price-info">oooo</span>
                             </div>
                             <button href="#" class="btn btn-buy">ver serviços <i class="fas fa-arrow-right"></i></button>
-                        </div> <!--Fim da área de preço do produto 1-->
                         </div>
                     </figure>
-                </a> <!--Fim do link do produto 1-->
-            </li> <!--Fim do produto 1-->
-            <li class="product-item"> <!--Produto 2-->
-                <a href="#" target="_blank" class="product-link"> <!--Link do produto 2-->
+                </a>
+            </li>
+            <li class="product-item">
+                <a href="#" target="_blank" class="product-link">
                     <figure class="product-info">
                         <div class="product-info-img">
-                            <!--Imagem do produto 2-->
                             <img src="imagens/produtos/foto-9.png" alt="description image">
                         </div>
-                        <figcaption class="product-info-description"> <!--Inicio da área do titulo e estrelas do produto 2-->
+                        <figcaption class="product-info-description">
                             <h2 class="title">iM7 Full color</h2>
                             <p class="description">câmera inteligente externa WI-FI full HD 360</p>
-                                <ul class="star-ranking">
-                                
-                                </ul>
-                        </figcaption> <!--Fim da área do titulo e estrelas do produto 2-->
-                        <div class="price-box"> <!--Inicio da área de preço do produto 2-->
-                            <div class="price"> 
+                            <ul class="star-ranking"></ul>
+                        </figcaption>
+                        <div class="price-box">
+                            <div class="price">
                                 <div>
                                     <del>0000</del>
                                     <ins class="d-block">0000</ins>
@@ -137,26 +112,22 @@
                                 <span class="price-info">0000</span>
                             </div>
                             <button href="#" class="btn btn-buy">ver serviços <i class="fas fa-arrow-right"></i></button>
-                        </div> <!--Fim da área de preço do produto 2-->
                         </div>
                     </figure>
-                </a> <!--Fim do link do produto 2-->
-            </li> <!--Fim do produto 2-->
-            <li class="product-item"> <!--Produto 3-->
-                <a href="#" target="_blank" class="product-link"> <!--Link do produto 3-->
+                </a>
+            </li>
+            <li class="product-item">
+                <a href="#" target="_blank" class="product-link">
                     <figure class="product-info">
                         <div class="product-info-img">
-                            <!--Imagem do produto 3-->
                             <img src="imagens/produtos/foto-2.png" alt="description image">
                         </div>
-                        <figcaption class="product-info-description"> <!--Inicio da área do titulo e estrelas do produto 3-->
+                        <figcaption class="product-info-description">
                             <h2 class="title">sistema de casa inteligente</h2>
                             <p class="description">Um **Sistema de Casa Inteligente** automatiza e controla dispositivos e sistemas domésticos para aumentar a conveniência, segurança e eficiência energética.</p>
-                            <ul class="star-ranking">
-                            
-                            </ul>
-                        </figcaption> <!--Fim da área do titulo e estrelas do produto 3-->
-                        <div class="price-box"> <!--Inicio da área de preço do produto 3-->
+                            <ul class="star-ranking"></ul>
+                        </figcaption>
+                        <div class="price-box">
                             <div class="price">
                                 <div>
                                     <del>R$0000</del>
@@ -165,33 +136,35 @@
                                 <span class="price-info">000000</span>
                             </div>
                             <button href="#" class="btn btn-buy">ver serviços <i class="fas fa-arrow-right"></i></button>
-                        </div> <!--Fim da área de preço do produto 3-->
                         </div>
                     </figure>
-                </a> <!--Fim do link do produto 3-->
-            </li> <!--Fim do produto 3-->
-        </ul> <!--fim da vitrine em linha com 3 produtos-->
-    </main> <!--Fim do Main-->
+                </a>
+            </li>
+        </ul>
+    </main>
 
-    <footer> <!--Inicio do rodapé-->
+    <footer>
         <div class="fechamento-footer-green"></div>
         <div class="espaco"></div>
-        <div class="div-footer-content"> <!--Inicio do conteudo do rodapé-->
-            
-            <div class="div-contact"> <!--Inicio da área de contatos-->
+        <div class="div-footer-content">
+            <div class="div-contact">
                 <h2 class="titulo-contact-us">Contact us</h2>
                 <p>• Email: ..</p>
                 <p>• Telefone: ........</p>
                 <p>• WhatsApp: ......</p>
-            </div> <!--Fim da área de contatos-->
-            <div class="redes-sociais-footer"> <!--Inicio das imagens com links para as redes sociais-->
-                <a href="https://www.instagram.com/wb.segurancaeletronica/profilecard/?igsh=MXRlYWFob2J1NHg5Yw==" target="_blank"><img width="35px" src="imagens/header-footer/instagram.png" alt=""></a>
-              </div> <!--Fim das imagens com links para as redes sociais-->
-        </div> <!--Fim do conteúdo do rodapé-->
+            </div>
+            <div class="redes-sociais-footer">
+                <a href="https://www.instagram.com/wb.segurancaeletronica/profilecard/?igsh=MXRlYWFob2J1NHg5Yw==" target="_blank">
+                    <img width="35px" src="imagens/header-footer/instagram.png" alt="">
+                </a>
+            </div>
+        </div>
         <div class="espaco"></div>
-    </footer> <!--Fim do rodapé-->
-<script src="bla.js"></script>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/menu.js"></script> <!-- Novo arquivo JavaScript -->
     <script>
         AOS.init();
     </script>
