@@ -24,14 +24,22 @@
             </div>
             
             <div id="calabresa">
-                <button id="toggle-nav" class="mobile-toggle">Menu</button> <!-- Botão visível só no celular -->
-                <div id="overlay" class="overlay">
-                    <button id="close-nav" class="close-btn">X</button>
+                <!-- Navegação padrão para desktop -->
+                <nav class="desktop-nav">
+                    <a href="serviço.html">Serviços</a>
+                    <a href="quem-somos.html">Empresa</a>
+                </nav>
+                <!-- Botão para celular -->
+                <button id="menu-toggle" class="menu-btn">Menu</button>
+                <!-- Overlay para celular -->
+                <div id="mobile-overlay" class="mobile-overlay">
+                    <button id="close-overlay" class="close-btn">X</button>
                     <nav class="mobile-nav">
-                        <a class="link-header" href="serviço.html">Serviços</a>
-                        <a class="link-header" href="quem-somos.html">Empresa</a>
+                        <a href="serviço.html">Serviços</a>
+                        <a href="quem-somos.html">Empresa</a>
                     </nav>
                 </div>
+            </div>
                 <nav class="desktop-nav"> <!-- Navegação padrão para desktop -->
                     <a class="link-header" href="serviço.html">Serviços</a>
                     <a class="link-header" href="quem-somos.html">Empresa</a>

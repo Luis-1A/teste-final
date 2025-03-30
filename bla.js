@@ -1,21 +1,21 @@
 
-    const toggleBtn = document.getElementById('toggle-nav');
-    const overlay = document.getElementById('overlay');
-    const closeBtn = document.getElementById('close-nav');
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileOverlay = document.getElementById('mobile-overlay');
+    const closeOverlay = document.getElementById('close-overlay');
 
     // Abre o overlay
-    toggleBtn.addEventListener('click', () => {
-        overlay.classList.add('active');
+    menuToggle.addEventListener('click', () => {
+        mobileOverlay.classList.add('active');
     });
 
     // Fecha o overlay
-    closeBtn.addEventListener('click', () => {
-        overlay.classList.remove('active');
+    closeOverlay.addEventListener('click', () => {
+        mobileOverlay.classList.remove('active');
     });
 
     // Fecha ao clicar fora
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-            overlay.classList.remove('active');
+    mobileOverlay.addEventListener('click', (e) => {
+        if (e.target === mobileOverlay) {
+            mobileOverlay.classList.remove('active');
         }
     });
