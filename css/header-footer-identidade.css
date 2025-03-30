@@ -406,7 +406,7 @@ p {
   }
   .logo-container {
     background-color: white; /* Fundo branco */
-    width: 100px; /* Tamanho do quadrado */
+    width: 100px; /* Tamanho reduzido do quadrado */
     height: 100px; /* Quadrado perfeito */
     position: relative; /* Para posicionamento absoluto dos elementos internos */
     border-radius: 8px; /* Bordas arredondadas (opcional) */
@@ -425,7 +425,7 @@ p {
     top: 50%; /* Centraliza verticalmente */
     left: 0;
     width: 100%; /* Ocupa toda a largura */
-    height: 2px; /* Espessura do eixo */
+    height: 1px; /* Espessura do eixo, reduzida para o novo tamanho */
     background-color: black; /* Cor do eixo */
   }
   
@@ -435,15 +435,21 @@ p {
     left: 50%; /* Centraliza horizontalmente */
     top: 0;
     height: 100%; /* Ocupa toda a altura */
-    width: 2px; /* Espessura do eixo */
+    width: 1px; /* Espessura do eixo, reduzida para o novo tamanho */
     background-color: black; /* Cor do eixo */
   }
   
   .logo-img {
-    width: 50px; /* Tamanho menor para a logo, para caber bem no ponto (0,0) */
-    height: auto; /* Mantém a proporção */
-    position: absolute; /* Posicionamento absoluto para colocá-la no ponto (0,0) */
-    top: 50%; /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta para que o centro da logo fique no (0,0) */
+    width: 60px; /* Aumenta a logo */
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } 
+  .axis-x {
+    height: 2px;
+  }
+  .axis-y {
+    width: 2px;
   }
