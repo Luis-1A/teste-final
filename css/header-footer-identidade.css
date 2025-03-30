@@ -407,17 +407,17 @@ p {
   .logo-container {
     background-color: white; /* Fundo branco */
     width: 120px; /* Tamanho do quadrado */
-    height: 100px; /* Quadrado perfeito */
+    height: 100px; /* Retângulo (não é um quadrado perfeito) */
     display: flex; /* Flexbox para centralizar */
-    justify-content: flex-start; /* Alinha à esquerda */
+    justify-content: flex-end; /* Alinha à direita */
     align-items: center; /* Mantém centralizado verticalmente */
-    padding-left: -0px; /* Move um pouquinho para a direita da borda esquerda */
+    padding-right: 10px; /* Move um pouquinho para a esquerda a partir da borda direita */
     border-radius: 8px; /* Bordas arredondadas (opcional) */
     overflow: hidden; /* Evita que a logo "vaze" */
   }
   
   .logo-img {
-    width: 180px; /* Tamanho da logo */
+    width: 80px; /* Tamanho ajustado da logo para caber no contêiner */
     height: auto; /* Mantém a proporção */
     display: block; /* Remove espaçamento indesejado */
   }
