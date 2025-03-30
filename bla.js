@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // === Configurações Iniciais ===
     const containerWidth = 100; // Largura do quadrado (em px)
     const containerHeight = 100; // Altura do quadrado (em px)
-    const logoWidth = 150; // Largura da logo ajustada para 150px (em px)
+    const logoWidth = 150; // Largura da logo  150px (em px)
     const initialRightOffset = -50; // Deslocamento inicial para a direita (em px)
     const animationDuration = 1000; // Duração da animação (em ms)
     const checkInterval = 2000; // Intervalo para verificar a posição (em ms)
