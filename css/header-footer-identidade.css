@@ -289,19 +289,7 @@ p {
     .espaco {
         padding: 15px 0px 15px 0px;
     }
-}
-/* Estilo padrão para desktop (mantido como está) *//* Estilo padrão para desktop *//* Estilo padrão para desktop *//* Estilo geral *//* Estilo geral */
-#calabresa {
-    position: relative;
-}
-
-/* Desktop Nav (ajustado para o HTML original) */
-.desktop-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+}/* Estilo para computador */
 .desktop-nav a {
     display: inline-block;
     padding: 15px 30px;
@@ -321,7 +309,7 @@ p {
     transform: scale(1.1);
 }
 
-/* Botão Menu (escondido no desktop) */
+/* Botão Menu (escondido no computador) */
 .menu-btn {
     display: none;
     padding: 10px 20px;
@@ -336,72 +324,46 @@ p {
     text-align: center;
 }
 
-/* Overlay */
+/* Overlay para celular (simplificado) */
 .mobile-overlay {
     display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    z-index: 2000;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.mobile-overlay.active {
-    display: flex;
-}
-
-/* Botão Fechar */
-.close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    padding: 5px 10px;
-    background-color: #ffd700;
-    color: #1a0b2e;
-    border: none;
-    border-radius: 50%;
-    font-size: 18px;
-    cursor: pointer;
+    position: relative;
+    background: none;
+    backdrop-filter: none;
 }
 
 /* Mobile Nav */
 .mobile-nav {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-overlay.active .mobile-nav {
+    display: flex;
+    opacity: 1;
 }
 
 .mobile-nav a {
     display: block;
-    padding: 10px 20px;
-    background-color: #2d1b4b;
+    padding: 10px;
     color: #ffd700;
     text-decoration: none;
-    border: 2px solid #00ffff;
-    border-radius: 20px;
-    margin: 10px;
-    font-size: 16px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.mobile-nav a:hover {
-    background-color: #00ffff;
-    color: #1a0b2e;
+    font-size: 18px;
 }
 
 /* Media Query para celular */
 @media (max-width: 480px) {
-    .desktop-nav:first-child { /* Só o primeiro .desktop-nav dentro de #calabresa */
+    #calabresa .desktop-nav {
         display: none;
     }
     .menu-btn {
+        display: block;
+    }
+    .mobile-overlay.active {
         display: block;
     }
 }
