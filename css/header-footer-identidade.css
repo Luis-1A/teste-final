@@ -406,8 +406,8 @@ p {
   }
   .logo-container {
     background-color: white; /* Fundo branco */
-    width: 200px; /* Tamanho do quadrado */
-    height: 200px; /* Quadrado perfeito */
+    width: 100px; /* Tamanho do quadrado */
+    height: 100px; /* Quadrado perfeito */
     position: relative; /* Para posicionamento absoluto dos elementos internos */
     border-radius: 8px; /* Bordas arredondadas (opcional) */
     overflow: hidden; /* Evita que elementos "vazem" */
