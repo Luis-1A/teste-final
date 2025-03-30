@@ -290,7 +290,7 @@ p {
         padding: 15px 0px 15px 0px;
     }
 }
-
+/* Estilo padrão para desktop (mantido como está) */
 nav a {
     display: inline-block;
     padding: 15px 30px;
@@ -309,16 +309,29 @@ nav a:hover {
     transform: scale(1.1);
 }
 
-/* Para telas pequenas (celulares) */
+/* Ajustes para telas menores (celulares) */
 @media (max-width: 480px) {
-    nav a[href="index.html"] {
-        display: none;
+    nav {
+        display: flex;
+        flex-direction: row; /* Links lado a lado, mas ajustados */
+        justify-content: center; /* Centraliza os botões */
+        width: 100%;
     }
+
     nav a {
-        padding: 12px;
-        font-size: 14px;
-        border-radius: 50%;
-        margin: 5px;
-        text-align: center;
+        padding: 10px 15px; /* Reduz o tamanho do padding */
+        font-size: 14px; /* Fonte menor */
+        border-radius: 20px; /* Formato mais arredondado, quase oval */
+        margin: 5px; /* Mantém o espaçamento entre os botões */
+        min-width: 80px; /* Largura mínima para não ficarem muito estreitos */
+        text-align: center; /* Centraliza o texto */
+        background-color: #2d1b4b; /* Mantém o roxo */
+        border: 2px solid #00ffff; /* Mantém a borda ciano */
+    }
+
+    nav a:hover {
+        background-color: #00ffff; /* Ciano no hover */
+        color: #1a0b2e; /* Roxo escuro */
+        transform: scale(1.05); /* Reduz a escala no hover para caber melhor */
     }
 }
