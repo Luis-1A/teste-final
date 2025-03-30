@@ -289,14 +289,14 @@ p {
     .espaco {
         padding: 15px 0px 15px 0px;
     }
-}/* Estilo para computador */
+}/* Estilo padrão para os links no desktop */
 .desktop-nav a {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #2d1b4b; /* Roxo médio */
-    color: #ffd700; /* Dourado */
+    background-color: #2d1b4b; /* Fundo roxo escuro */
+    color: #ffd700; /* Texto dourado */
     text-decoration: none;
-    border: 2px solid #00ffff; /* Ciano */
+    border: 2px solid #00ffff; /* Borda ciano */
     border-radius: 8px;
     margin: 5px;
     font-size: 20px;
@@ -304,14 +304,13 @@ p {
 }
 
 .desktop-nav a:hover {
-    background-color: #00ffff;
-    color: #1a0b2e;
-    transform: scale(1.1);
+    background-color: #00ffff; /* Fundo ciano ao passar o mouse */
+    color: #1a0b2e; /* Texto roxo escuro */
+    transform: scale(1.1); /* Leve aumento ao hover */
 }
 
-/* Botão Menu (escondido no computador) */
+/* Estilo do botão Menu */
 .menu-btn {
-    display: none;
     padding: 10px 20px;
     background-color: #2d1b4b;
     color: #ffd700;
@@ -322,19 +321,16 @@ p {
     margin: 10px auto;
     width: 100px;
     text-align: center;
+    display: none; /* Escondido por padrão */
 }
 
-/* Overlay para celular (simplificado) */
+/* Estilo do overlay e links no celular */
 .mobile-overlay {
-    display: none;
-    position: relative;
-    background: none;
-    backdrop-filter: none;
+    display: none; /* Escondido por padrão */
 }
 
-/* Mobile Nav */
 .mobile-nav {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
@@ -343,27 +339,44 @@ p {
 }
 
 .mobile-overlay.active .mobile-nav {
-    display: flex;
-    opacity: 1;
+    opacity: 1; /* Aparece quando o overlay está ativo */
 }
 
 .mobile-nav a {
     display: block;
     padding: 10px;
-    color: #ffd700;
+    color: #ffd700; /* Texto dourado */
     text-decoration: none;
     font-size: 18px;
 }
 
-/* Media Query para celular */
-@media (max-width: 480px) {
-    #calabresa .desktop-nav {
-        display: none;
+/* Computador (telas maiores que 480px) */
+@media (min-width: 481px) {
+    .desktop-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .menu-btn {
-        display: block;
+        display: none; /* Botão Menu escondido no desktop */
+    }
+    .mobile-overlay {
+        display: none; /* Overlay escondido no desktop */
+    }
+}
+
+/* Celular (telas até 480px) */
+@media (max-width: 480px) {
+    .desktop-nav {
+        display: none; /* Navegação desktop escondida no celular */
+    }
+    .menu-btn {
+        display: block; /* Botão Menu visível no celular */
+    }
+    .mobile-overlay {
+        display: none; /* Overlay escondido até ser ativado */
     }
     .mobile-overlay.active {
-        display: block;
+        display: block; /* Overlay visível quando ativo */
     }
 }
