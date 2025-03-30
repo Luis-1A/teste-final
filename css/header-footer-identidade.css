@@ -411,7 +411,7 @@ p {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: -0px;
+    padding-right: -50px;
     border-radius: 8px;
     overflow: hidden;
   }
