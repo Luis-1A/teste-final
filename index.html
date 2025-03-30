@@ -24,10 +24,18 @@
             </div>
             
             <div id="calabresa">
-                <nav> <!--Inicio da área de navegação-->
+                <nav> <!-- Início da área de navegação -->
                     <a class="link-header" href="serviço.html">Serviços</a>
-                    <a class="link-header" href="quem-somos.html">empresa</a>
+                    <a class="link-header" href="quem-somos.html">Empresa</a>
                 </nav>
+                <button id="toggle-nav" class="mobile-toggle">Menu</button> <!-- Botão visível só no celular -->
+                <div id="overlay" class="overlay">
+                    <button id="close-nav" class="close-btn">X</button>
+                    <nav class="mobile-nav"> <!-- Navegação que aparece no overlay -->
+                        <a class="link-header" href="serviço.html">Serviços</a>
+                        <a class="link-header" href="quem-somos.html">Empresa</a>
+                    </nav>
+                </div>
             </div>
         </section> <!--FIm da seção do conteúdo do cabeçalho-->
         <div class="espaco-header"></div>

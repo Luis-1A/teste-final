@@ -290,7 +290,7 @@ p {
         padding: 15px 0px 15px 0px;
     }
 }
-/* Estilo padrão para desktop (mantido como está) */
+/* Estilo padrão para desktop (mantido como está) *//* Estilo padrão para desktop */
 nav a {
     display: inline-block;
     padding: 15px 30px;
@@ -309,29 +309,99 @@ nav a:hover {
     transform: scale(1.1);
 }
 
-/* Ajustes para telas menores (celulares) */
+/* Botão de toggle visível só no celular */
+.mobile-toggle {
+    display: none; /* Escondido no desktop */
+    padding: 10px 20px;
+    background-color: #2d1b4b;
+    color: #ffd700;
+    border: 2px solid #00ffff;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-toggle:hover {
+    background-color: #00ffff;
+    color: #1a0b2e;
+}
+
+/* Overlay (fundo borrado) */
+.overlay {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+    backdrop-filter: blur(5px); /* Efeito de blur */
+    z-index: 2000; /* Acima de tudo */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Botão de fechar */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 10px;
+    background-color: #ffd700;
+    color: #1a0b2e;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Navegação no overlay */
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mobile-nav a {
+    padding: 10px 20px;
+    background-color: #2d1b4b;
+    color: #ffd700;
+    border: 2px solid #00ffff;
+    border-radius: 20px;
+    margin: 10px;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-nav a:hover {
+    background-color: #00ffff;
+    color: #1a0b2e;
+    transform: scale(1.05);
+}
+
+/* Ajustes para telas pequenas (celulares) */
 @media (max-width: 480px) {
-    nav {
+    /* Esconde a navegação padrão no celular */
+    #calabresa nav {
+        display: none;
+    }
+
+    /* Mostra o botão de toggle */
+    .mobile-toggle {
+        display: block;
+        margin: 10px auto; /* Centraliza o botão */
+    }
+
+    /* Quando o overlay estiver ativo */
+    .overlay.active {
         display: flex;
-        flex-direction: row; /* Links lado a lado, mas ajustados */
-        justify-content: center; /* Centraliza os botões */
-        width: 100%;
-    }
-
-    nav a {
-        padding: 10px 15px; /* Reduz o tamanho do padding */
-        font-size: 14px; /* Fonte menor */
-        border-radius: 20px; /* Formato mais arredondado, quase oval */
-        margin: 5px; /* Mantém o espaçamento entre os botões */
-        min-width: 80px; /* Largura mínima para não ficarem muito estreitos */
-        text-align: center; /* Centraliza o texto */
-        background-color: #2d1b4b; /* Mantém o roxo */
-        border: 2px solid #00ffff; /* Mantém a borda ciano */
-    }
-
-    nav a:hover {
-        background-color: #00ffff; /* Ciano no hover */
-        color: #1a0b2e; /* Roxo escuro */
-        transform: scale(1.05); /* Reduz a escala no hover para caber melhor */
     }
 }
