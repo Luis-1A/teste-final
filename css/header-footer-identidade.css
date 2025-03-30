@@ -404,74 +404,19 @@ p {
       display: block;
     }
   }
-  /* Contêiner da animação */
-#logo-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
-    backdrop-filter: blur(5px); /* Efeito de fundo borrado */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 3000; /* Fica acima de tudo */
-    animation: fadeOut 4s forwards; /* Desaparece após 4 segundos */
-  }
-  
-  /* Centraliza o conteúdo */
-  .animation-content {
-    text-align: center;
-  }
-  
-  /* Logo grande no início */
-  .animation-logo {
-    width: 300px; /* Tamanho inicial grande */
-    height: auto;
-    animation: shrinkLogo 4s forwards; /* Animação de diminuição */
-  }
-  
-  /* Texto da frase */
-  .animation-text {
-    color: #ffd700; /* Cor dourada */
-    font-size: 24px;
-    margin-top: 20px;
-    opacity: 0;
-    animation: fadeInText 1s forwards 1s; /* Aparece após 1 segundo */
-  }
-  
-  /* Animação de diminuição da logo */
-  @keyframes shrinkLogo {
-    0% {
-      width: 300px;
-      transform: translateY(0);
-    }
-    100% {
-      width: 80px; /* Tamanho final no header */
-      transform: translateY(-50vh); /* Move para o topo */
-    }
-  }
-  
-  /* Animação de aparecimento do texto */
-  @keyframes fadeInText {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  /* Animação de desaparecimento do contêiner */
-  @keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; display: none; }
-  }
-  
-  /* Estilo da logo no header */
-  .div-marca {
-    display: flex;
-    align-items: center;
+  .logo-container {
+    background-color: white; /* Fundo branco */
+    width: 150px; /* Largura do quadrado */
+    height: 150px; /* Altura igual à largura para formar um quadrado */
+    display: flex; /* Usa Flexbox para centralizar */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    overflow: hidden; /* Evita que a logo ultrapasse o quadrado */
   }
   
   .logo-img {
-    width: 80px; /* Tamanho original no header */
-    height: auto;
+    width: 100%; /* A logo ocupa a largura do contêiner */
+    height: auto; /* Mantém a proporção da logo */
+    max-width: 100%; /* Limita o tamanho máximo da logo */
+    max-height: 100%; /* Limita o tamanho máximo da logo */
   }
