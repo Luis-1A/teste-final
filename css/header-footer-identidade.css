@@ -404,20 +404,4 @@ p {
       display: block;
     }
   }
-  .logo-container {
-    background-color: white;
-    width: 100px;
-    height: 100px; /* Quadrado perfeito */
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: -50px;
-    border-radius: 8px;
-    overflow: hidden;
-  }
   
-  .logo-img {
-    width: 150px; /* Tamanho ajustado da logo para caber no contêiner */
-    height: auto; /* Mantém a proporção */
-    display: block; /* Remove espaçamento indesejado */
-  }
