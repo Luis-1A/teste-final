@@ -406,17 +406,17 @@ p {
   }
   .logo-container {
     background-color: white; /* Fundo branco */
-    width: 100px; /* Largura do quadrado */
-    height: 100px; /* Altura igual à largura para formar um quadrado */
-    display: flex; /* Usa Flexbox para centralizar */
+    width: 200px; /* Tamanho fixo do quadrado */
+    height: 200px; /* Quadrado perfeito */
+    display: flex; /* Flexbox para centralizar */
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
-    overflow: hidden; /* Evita que a logo ultrapasse o quadrado */
+    border-radius: 8px; /* Bordas arredondadas (opcional) */
+    overflow: hidden; /* Evita que a logo "vaze" */
   }
   
   .logo-img {
-    width: 100%; /* A logo ocupa a largura do contêiner */
-    height: auto; /* Mantém a proporção da logo */
-    max-width: 100%; /* Limita o tamanho máximo da logo */
-    max-height: 100%; /* Limita o tamanho máximo da logo */
+    width: 180px; /* Tamanho da logo, ligeiramente menor que o quadrado */
+    height: auto; /* Mantém a proporção */
+    display: block; /* Remove qualquer espaçamento indesejado */
   }
