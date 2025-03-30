@@ -406,50 +406,18 @@ p {
   }
   .logo-container {
     background-color: white; /* Fundo branco */
-    width: 100px; /* Tamanho reduzido do quadrado */
+    width: 120px; /* Tamanho do quadrado */
     height: 100px; /* Quadrado perfeito */
-    position: relative; /* Para posicionamento absoluto dos elementos internos */
+    display: flex; /* Flexbox para centralizar */
+    justify-content: flex-start; /* Alinha à esquerda */
+    align-items: center; /* Mantém centralizado verticalmente */
+    padding-left: -0px; /* Move um pouquinho para a direita da borda esquerda */
     border-radius: 8px; /* Bordas arredondadas (opcional) */
-    overflow: hidden; /* Evita que elementos "vazem" */
-  }
-  
-  .cartesian-plane {
-    width: 100%;
-    height: 100%;
-    position: relative; /* Para os eixos e a logo serem posicionados em relação a este contêiner */
-  }
-  
-  /* Eixo X (horizontal) */
-  .axis-x {
-    position: absolute;
-    top: 50%; /* Centraliza verticalmente */
-    left: 0;
-    width: 100%; /* Ocupa toda a largura */
-    height: 1px; /* Espessura do eixo, reduzida para o novo tamanho */
-    background-color: black; /* Cor do eixo */
-  }
-  
-  /* Eixo Y (vertical) */
-  .axis-y {
-    position: absolute;
-    left: 50%; /* Centraliza horizontalmente */
-    top: 0;
-    height: 100%; /* Ocupa toda a altura */
-    width: 1px; /* Espessura do eixo, reduzida para o novo tamanho */
-    background-color: black; /* Cor do eixo */
+    overflow: hidden; /* Evita que a logo "vaze" */
   }
   
   .logo-img {
-    width: 60px; /* Aumenta a logo */
-    height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  } 
-  .axis-x {
-    height: 2px;
-  }
-  .axis-y {
-    width: 2px;
+    width: 180px; /* Tamanho da logo */
+    height: auto; /* Mantém a proporção */
+    display: block; /* Remove espaçamento indesejado */
   }
