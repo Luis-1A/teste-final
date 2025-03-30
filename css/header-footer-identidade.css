@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap'); 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,69 +8,71 @@
     font-family: sans-serif;
 }
 
-main{
+main {
     padding-top: 50px;
-    background: url(../imagens/header-footer/background-pontos.png), rgb(41, 41, 41);
+    background: url(../imagens/header-footer/background-pontos.png), #1a0b2e; /* Roxo escuro elegante */
 }
 
-.espaco{
+.espaco {
     width: 100%;
     height: 50px;
 }
 
-.espaco-main-footer{
+.espaco-main-footer {
     width: 100%;
-    height: 50px;  
+    height: 50px; 
 }
 
-h1{
+h1 {
     font-size: 30px;
     margin-left: 5px;
-    color: #008000;
+    color: #ffd700; /* Dourado vibrante */
     font-weight: 800;
     line-height: 40px;
 }
 
-a{
-    color: aliceblue;
+a {
+    color: #e0e0ff; /* Branco com leve tom azulado */
     margin-left: 50px;
     font-size: 20px;
     font-weight: 400;
     text-decoration: none;
 }
-.redes-sociais-footer a{
+
+.redes-sociais-footer a {
     margin-left: 0;
 }
-a:hover{
+
+a:hover {
     transition: 0.1s all;
-    color: #008000;
+    color: #00ffff; /* Ciano brilhante */
     font-size: 20.2px;
 }
 
-h2{
-    color: #008000;
+h2 {
+    color: #ffd700; /* Dourado */
 }
 
-li , p{
-    color: aliceblue;
+li, p {
+    color: #e0e0ff; /* Branco suave */
     font-size: 16px;
     font-weight: 400;
     margin-top: 3px;
 }
 
-
 /************************HEADER************************/
-header{
+
+header {
     display: flex;
     flex-direction: column;
-    background: url(../imagens/header-footer/background-pontos.png), rgb(41, 41, 41);
+    background: url(../imagens/header-footer/background-pontos.png), #1a0b2e; /* Roxo escuro */
     position: sticky;
     top: 0;
     width: 100%;
-    z-index: 1000; /*Serve para o elemtento ficar acima dos outros, quanto maior for o seu número*/
+    z-index: 1000;
 }
 
-.secao{
+.secao {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -79,96 +81,95 @@ header{
     height: 90px;
 }
 
-nav{
+nav {
     height: 90px;
     line-height: 30px;
     display: flex;
     align-items: center;
 }
 
-.link-header{
+.link-header {
     margin-left: 50px;
 }
 
-.div-marca{
+.div-marca {
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 80px;
-
 }
 
-.input-text-pesquisa{
+.input-text-pesquisa {
     width: 350px;
     height: 25px;
     border-radius: 10px;
     padding: 15px;
-    border: 2px solid #008000;
+    border: 2px solid #ffd700; /* Dourado */
 }
 
-.button-pesquisa{
+.button-pesquisa {
     height: 30px;
     width: 70px;
     border-radius: 10px;
-
-    border: 2px solid #008000;
-    color: #008000;
+    border: 2px solid #ffd700; /* Dourado */
+    color: #ffd700;
 }
-.button-pesquisa:hover{
+
+.button-pesquisa:hover {
     transition: 0.4s all;
-    background-color: #008000;
-    color: aliceblue;
+    background-color: #ffd700; /* Dourado */
+    color: #1a0b2e; /* Roxo escuro */
     cursor: pointer;
 }
 
-.espaco-header{
-    background-color: #008000;
+.espaco-header {
+    background-color: #00ffff; /* Ciano */
     height: 25px;
 }
 
 .fechamento-footer-green, .fechamento-header-green {
     width: 100%;
     height: 5px;
-    background-color: #008000;
+    background-color: #00ffff; /* Ciano */
 }
 
-/*Para o bootstrap não distorcer*/
-button, input{
+/* Para o bootstrap não distorcer */
+button, input {
     font-size: 14px;
 }
 
-@media (max-width: 1187px){
-    nav{
+@media (max-width: 1187px) {
+    nav {
         display: flex;
         flex-direction: column;
     }
 }
-@media (max-width: 981px){
-    .form-pesquisa{
+
+@media (max-width: 981px) {
+    .form-pesquisa {
         display: none;
     }
-    nav{
+    nav {
         width: 300px;
     }
-    
 }
-@media (max-width: 517px){
-    nav{
+
+@media (max-width: 517px) {
+    nav {
         width: 300px;
     }
-    a{
+    a {
         font-size: 17px;
     }
-    a:hover{
+    a:hover {
         font-size: 17.2px;
     }
 }
-/******************************************************/
-
 
 /************************FOOTER************************/
-footer{
-    background-color: rgb(48, 48, 48);
+
+footer {
+    background-color: #2d1b4b; /* Roxo médio */
     height: 300px;
     width: 100%;
     display: flex;
@@ -177,155 +178,147 @@ footer{
     bottom: 0;
 }
 
-label{
+label {
     font-size: 20px;
-    color: #008000;
+    color: #ffd700; /* Dourado */
     font-weight: 400;
 }
 
-.div-footer-content{
+.div-footer-content {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding: 15px;
 }
 
-.form-login{
+.form-login {
     display: flex;
     flex-direction: column;
-    /* margin-left: 100px; */
 }
 
-.input-text-login{
+.input-text-login {
     width: 200px;
     height: 30px;
-    border: 2px solid #008000;
-    border-radius: 10px ;
-    padding: 5px;
-    margin-top: 3px;
-}
-
-.input-senha-login{
-    width: 200px;
-    height: 30px;
-    border: 2px solid #008000;
+    border: 2px solid #ffd700; /* Dourado */
     border-radius: 10px;
     padding: 5px;
     margin-top: 3px;
 }
 
-.input-submit-login{
+.input-senha-login {
+    width: 200px;
+    height: 30px;
+    border: 2px solid #ffd700; /* Dourado */
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 3px;
+}
+
+.input-submit-login {
     width: 75px;
     border-radius: 10px;
     padding: 5px;
-    border: 2px solid #008000;
-    color: #008000;
+    border: 2px solid #ffd700; /* Dourado */
+    color: #ffd700;
     margin-top: 3px;
 }
-.input-submit-login:hover{
+
+.input-submit-login:hover {
     transition: 0.4s all;
-    background-color: #008000;
-    color: aliceblue;
+    background-color: #ffd700; /* Dourado */
+    color: #1a0b2e; /* Roxo escuro */
     cursor: pointer;
 }
 
-.redes-sociais-footer{
+.redes-sociais-footer {
     width: 300px;
     display: flex;
     align-items: center; 
     justify-content: space-around;
-
-
     transform: translateY(0px);
     animation: float 5s ease-in-out infinite;
 }
+
 @keyframes float {
-    0%{
-        transform: translateY(0px);
-    }
-    50%{
-        transform: translateY(-15px);
-    }
-    100%{
-        transform: translateY(0px);
-    }
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
 }
 
-.label-login, .input-submit-login, .titulo-contact-us{
+.label-login, .input-submit-login, .titulo-contact-us {
     margin-left: auto;
     margin-right: auto;
 }
 
-.espaco{
+.espaco {
     height: 80px;
     background-attachment: fixed;
-    background-color: rgb(34, 34, 33);
-    background: url(../imagens/header-footer/background-pontos.png), rgb(41, 41, 41);
+    background-color: #1a0b2e; /* Roxo escuro */
+    background: url(../imagens/header-footer/background-pontos.png), #1a0b2e;
 }
 
-p{
+p {
     margin: 0;
 }
-.div-contact{
+
+.div-contact {
     line-height: 30px;
 }
-.titulo-contact-us{
+
+.titulo-contact-us {
     font-size: 30px;
     font-weight: 500;
     line-height: 40px;
     text-align: center;
 }
 
-@media (max-width: 760px){
-    footer{
+@media (max-width: 760px) {
+    footer {
         height: 530px;
     }
-    .div-footer-content{
+    .div-footer-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        background-color: rgb(48, 48, 48);
+        background-color: #2d1b4b; /* Roxo médio */
     }
-
-    .div-contact, .redes-sociais-footer{
+    .div-contact, .redes-sociais-footer {
         margin-top: 15px;
     }
-    .espaco{
+    .espaco {
         padding: 15px 0px 15px 0px;
     }
 }
+
 nav a {
-    display: inline-block; /* Faz os links ficarem em linha, mas com comportamento de bloco */
-    padding: 15px 30px; /* Adiciona preenchimento ao redor do texto */
-    background-color: #f0f0f0; /* Cor de fundo do quadrado */
-    color: #333; /* Cor do texto */
-    text-decoration: none; /* Remove o sublinhado */
-    border: 2px solid #ccc; /* Borda do quadrado */
-    border-radius: 8px; /* Cantos arredondados */
-    margin: 5px; /* Espaço entre os links */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave */
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #2d1b4b; /* Roxo médio */
+    color: #ffd700; /* Dourado */
+    text-decoration: none;
+    border: 2px solid #00ffff; /* Ciano */
+    border-radius: 8px;
+    margin: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 nav a:hover {
-    background-color: #001580; /* Altera a cor de fundo ao passar o mouse */
-    color: white; /* Muda a cor do texto */
-    transform: scale(1.1); /* Aumenta o tamanho do quadrado ao passar o mouse */
+    background-color: #00ffff; /* Ciano */
+    color: #1a0b2e; /* Roxo escuro */
+    transform: scale(1.1);
 }
 
 /* Para telas pequenas (celulares) */
 @media (max-width: 480px) {
-    /* Ocultar o link "Home" apenas em telas pequenas */
     nav a[href="index.html"] {
         display: none;
     }
-
-    /* Ajustar os links para exibir apenas "Serviços" e "Quem Somos" */
     nav a {
-        padding: 12px; /* Ajusta o padding para botões menores */
-        font-size: 14px; /* Diminui o tamanho da fonte */
-        border-radius: 50%; /* Torna os botões redondos */
-        margin: 5px; /* Mantém o espaço entre os botões */
-        text-align: center; /* Garante que o texto esteja centralizado */
+        padding: 12px;
+        font-size: 14px;
+        border-radius: 50%;
+        margin: 5px;
+        text-align: center;
     }
 }
