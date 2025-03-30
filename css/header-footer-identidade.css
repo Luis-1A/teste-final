@@ -411,7 +411,7 @@ p {
     display: flex; /* Flexbox para centralizar */
     justify-content: flex-start; /* Alinha à esquerda */
     align-items: center; /* Mantém centralizado verticalmente */
-    padding-left: -10px; /* Move um pouquinho para a direita da borda esquerda */
+    padding-left: -30px; /* Move um pouquinho para a direita da borda esquerda */
     border-radius: 8px; /* Bordas arredondadas (opcional) */
     overflow: hidden; /* Evita que a logo "vaze" */
   }
