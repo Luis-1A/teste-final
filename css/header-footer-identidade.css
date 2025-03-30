@@ -417,7 +417,7 @@ p {
   }
   
   .logo-img {
-    width: 120px; /* Tamanho ajustado da logo para caber no contêiner */
+    width: 150px; /* Tamanho ajustado da logo para caber no contêiner */
     height: auto; /* Mantém a proporção */
     display: block; /* Remove espaçamento indesejado */
   }
