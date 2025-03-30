@@ -406,7 +406,7 @@ p {
   }
   .logo-container {
     background-color: white; /* Fundo branco */
-    width: 120px; /* Tamanho do quadrado */
+    width: 100px; /* Tamanho do quadrado */
     height: 100px; /* Retângulo (não é um quadrado perfeito) */
     display: flex; /* Flexbox para centralizar */
     justify-content: flex-end; /* Alinha à direita */
