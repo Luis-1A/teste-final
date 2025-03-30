@@ -289,28 +289,40 @@ p {
     .espaco {
         padding: 15px 0px 15px 0px;
     }
-}/* Estilo padrão para os links no desktop */
-.desktop-nav a {
+}/* Estilo geral */
+#calabresa {
+    position: relative;
+  }
+  
+  /* Desktop Nav */
+  .desktop-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .desktop-nav a {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #2d1b4b; /* Fundo roxo escuro */
-    color: #ffd700; /* Texto dourado */
+    background-color: #2d1b4b; /* Roxo médio */
+    color: #ffd700; /* Dourado */
     text-decoration: none;
-    border: 2px solid #00ffff; /* Borda ciano */
+    border: 2px solid #00ffff; /* Ciano */
     border-radius: 8px;
     margin: 5px;
     font-size: 20px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.desktop-nav a:hover {
-    background-color: #00ffff; /* Fundo ciano ao passar o mouse */
-    color: #1a0b2e; /* Texto roxo escuro */
-    transform: scale(1.1); /* Leve aumento ao hover */
-}
-
-/* Estilo do botão Menu */
-.menu-btn {
+  }
+  
+  .desktop-nav a:hover {
+    background-color: #00ffff;
+    color: #1a0b2e;
+    transform: scale(1.1);
+  }
+  
+  /* Botão Menu (escondido no desktop) */
+  .menu-btn {
+    display: none;
     padding: 10px 20px;
     background-color: #2d1b4b;
     color: #ffd700;
@@ -321,62 +333,74 @@ p {
     margin: 10px auto;
     width: 100px;
     text-align: center;
-    display: none; /* Escondido por padrão */
-}
-
-/* Estilo do overlay e links no celular */
-.mobile-overlay {
-    display: none; /* Escondido por padrão */
-}
-
-.mobile-nav {
+  }
+  
+  /* Overlay */
+  .mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .mobile-overlay.active {
+    display: flex;
+  }
+  
+  /* Botão Fechar */
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 10px;
+    background-color: #ffd700;
+    color: #1a0b2e;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  /* Mobile Nav */
+  .mobile-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.mobile-overlay.active .mobile-nav {
-    opacity: 1; /* Aparece quando o overlay está ativo */
-}
-
-.mobile-nav a {
+  }
+  
+  .mobile-nav a {
     display: block;
-    padding: 10px;
-    color: #ffd700; /* Texto dourado */
+    padding: 10px 20px;
+    background-color: #2d1b4b;
+    color: #ffd700;
     text-decoration: none;
-    font-size: 18px;
-}
-
-/* Computador (telas maiores que 480px) */
-@media (min-width: 481px) {
+    border: 2px solid #00ffff;
+    border-radius: 20px;
+    margin: 10px;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mobile-nav a:hover {
+    background-color: #00ffff;
+    color: #1a0b2e;
+  }
+  
+  /* Media Query para celular */
+  @media (max-width: 480px) {
     .desktop-nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      display: none;
     }
     .menu-btn {
-        display: none; /* Botão Menu escondido no desktop */
+      display: block;
     }
-    .mobile-overlay {
-        display: none; /* Overlay escondido no desktop */
-    }
-}
-
-/* Celular (telas até 480px) */
-@media (max-width: 480px) {
-    .desktop-nav {
-        display: none; /* Navegação desktop escondida no celular */
-    }
-    .menu-btn {
-        display: block; /* Botão Menu visível no celular */
-    }
-    .mobile-overlay {
-        display: none; /* Overlay escondido até ser ativado */
-    }
-    .mobile-overlay.active {
-        display: block; /* Overlay visível quando ativo */
-    }
-}
+  }

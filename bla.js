@@ -1,6 +1,7 @@
-const menuToggle = document.getElementById('menu-toggle');
-const mobileOverlay = document.getElementById('mobile-overlay');
-
-menuToggle.addEventListener('click', () => {
-    mobileOverlay.classList.toggle('active');
-});
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.getElementById('mobile-overlay').classList.add('active');
+  });
+  
+  document.querySelector('.close-btn').addEventListener('click', function() {
+    document.getElementById('mobile-overlay').classList.remove('active');
+  });
