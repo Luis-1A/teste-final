@@ -304,10 +304,10 @@ p {
   .desktop-nav a {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #2d1b4b; /* Roxo médio */
-    color: #ffd700; /* Dourado */
+    background-color: #2d1b4b;
+    color: #ffd700;
     text-decoration: none;
-    border: 2px solid #00ffff; /* Ciano */
+    border: 2px solid #00ffff;
     border-radius: 8px;
     margin: 5px;
     font-size: 20px;
@@ -352,7 +352,7 @@ p {
   }
   
   .mobile-overlay.active {
-    display: flex;
+    display: flex !important; /* Garante que o overlay apareça */
   }
   
   /* Botão Fechar */
@@ -395,8 +395,8 @@ p {
     color: #1a0b2e;
   }
   
-  /* Media Query para celular */
-  @media (max-width: 480px) {
+  /* Media Query para dispositivos móveis */
+  @media (max-width: 768px) {
     .desktop-nav {
       display: none;
     }
