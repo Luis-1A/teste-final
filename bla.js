@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // === Inicia o Sistema ===
     correctionSystem();
   
-    // === Logs Adicionais para Atingir 200 Linhas ===
+    // === Logs Adicionais para Atingir o meio do quadrado
     console.log('Sistema de correção de posição da logo iniciado.');
     console.log('Configurações do contêiner:');
     console.log(`- Largura: ${containerWidth}px`);
