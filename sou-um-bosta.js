@@ -11,7 +11,7 @@ document.querySelectorAll('.btn-buy').forEach(button => {
         let price = priceElement ? priceElement.innerText.trim() : 'Preço não disponível';
 
         let message = `Olá, estou interessado no produto: ${title}, que está no valor de ${price}. Poderia me dar mais informações?`;
-        let phoneNumber = '6191947884';
+        let phoneNumber = '5561993191969';
         let whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         
         window.location.href = whatsappUrl;
