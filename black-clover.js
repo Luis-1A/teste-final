@@ -195,24 +195,3 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Fim do script.');
   });
 
-
-
-  document.querySelectorAll('.btn-buy').forEach(button => {
-    button.addEventListener('click', function (event) {
-        event.preventDefault(); // Evita comportamento padrão do botão
-        let product = this.closest('.product-item');
-        let title = product.querySelector('.title').innerText.trim();
-        let priceElement = product.querySelector('ins');
-        let price = priceElement ? priceElement.innerText.trim() : 'Preço não disponível';
-        
-        let message = `Olá, estou interessado no produto: ${title}, que está no valor de ${price}. Poderia me dar mais informações?`;
-        let phoneNumber = '6191947884';
-        let whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-        
-        window.location.href = whatsappUrl;
-    });
-});
-
-
-
-
