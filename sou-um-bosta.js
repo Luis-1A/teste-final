@@ -119,6 +119,6 @@ document.addEventListener('keydown', function (event) {
 
 // Registro oculto da última atualização, seu idiota
 (function () {
-    let lastUpdate = 'Última atualização: 30/03/2025 14:50'; // Data de merda
+    let lastUpdate = 'Última atualização: 01/04/2025 11:03'; // Data de merda
     console.log(`%c${lastUpdate}`, 'color: gray; font-size: 12px;'); // Loga essa bosta
 })();
