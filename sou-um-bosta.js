@@ -1,124 +1,188 @@
 document.querySelectorAll('.btn-buy').forEach(button => {
     button.addEventListener('click', function (event) {
-        event.preventDefault(); // Evita o comportamento padrão dessa merda de botão
+        event.preventDefault(); // Evita essa porra de comportamento padrão
         let product = this.closest('.product-item');
-        if (!product) return; // Se não achar o produto, foda-se, sai fora
+        if (!product) return; // Se não achar, foda-se
 
         let titleElement = product.querySelector('.title');
-        let title = titleElement ? titleElement.innerText.trim() : 'Produto desconhecido'; // Se não tiver título, que se dane
+        let title = titleElement ? titleElement.innerText.trim() : 'Produto desconhecido'; // Sem título, que se dane
 
-        let phoneNumber = '5561993191969'; // Número de WhatsApp, tomara que funcione, seu idiota
+        let phoneNumber = '5561993191969'; // Número de WhatsApp, seu idiota
         let message = `Olá, estou interessado no produto: ${title}. Poderia me dar mais informações?`;
-        let whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`; // URL do WhatsApp, que bosta
+        let whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`; // URL escrota
         
-        // Criar essa caixinha de aviso ridícula
+        // Caixinha de aviso ridícula
         let alertBox = document.createElement('div');
-        alertBox.style.position = 'fixed'; // Fica parado, seu merda
+        alertBox.style.position = 'fixed';
         alertBox.style.top = '50%';
         alertBox.style.left = '50%';
-        alertBox.style.transform = 'translate(-50%, -50%)';
-        alertBox.style.backgroundColor = '#007bff'; // Azulzinho escroto
+        alertBox.style.transform = 'translate(-50%, -50%) scale(0)';
+        alertBox.style.backgroundColor = '#ff4500'; // Vermelho pra te acordar, seu burro
         alertBox.style.color = 'white';
         alertBox.style.padding = '20px';
-        alertBox.style.borderRadius = '10px';
+        alertBox.style.borderRadius = '15px';
         alertBox.style.textAlign = 'center';
-        alertBox.style.boxShadow = '0px 4px 6px rgba(0, 0, 0, 0.1)';
+        alertBox.style.boxShadow = '0 0 15px rgba(255, 69, 0, 0.8)';
         alertBox.style.zIndex = '1000';
-        alertBox.innerHTML = `<p>Você será direcionado para o WhatsApp para saber mais sobre: <strong>${title}</strong>.</p><p>Aguarde <span id='countdown'>3</span> segundos...</p>`;
-        document.body.appendChild(alertBox); // Joga essa porra na tela
-        
+        alertBox.style.transition = 'transform 0.3s ease-in-out';
+        alertBox.innerHTML = `<p>Você vai pro WhatsApp saber mais sobre: <strong>${title}</strong>!</p><p>Aguarde <span id='countdown'>3</span> segundos, seu preguiçoso!</p>`;
+        document.body.appendChild(alertBox);
+
+        setTimeout(() => alertBox.style.transform = 'translate(-50%, -50%) scale(1)', 10);
+
         let countdown = 3; // Contagem regressiva, seu imbecil
         let interval = setInterval(() => {
             countdown--;
             document.getElementById('countdown').innerText = countdown;
-            if (countdown === 0) { // Quando zerar, sai dessa merda
-                clearInterval(interval); // Para essa bosta
-                document.body.removeChild(alertBox); // Tira essa porcaria da tela
+            if (countdown === 0) {
+                clearInterval(interval); // Para essa merda
+                alertBox.style.transform = 'translate(-50%, -50%) scale(0)';
+                setTimeout(() => document.body.removeChild(alertBox), 300);
                 window.location.href = whatsappUrl; // Vai pro WhatsApp, seu trouxa
             }
         }, 1000);
+
+        // Salva a última visita no localStorage, seu retardado
+        localStorage.setItem('lastVisit', Date.now());
     });
 });
 
-let closeCounter = 0; // Contador pra tecla X, seu burro
+// Carrega o contador de visitas do localStorage ou inicia em 0
+let visitCount = parseInt(localStorage.getItem('xVisitCount')) || 0;
+let closeCounter = 0; // Contador pra tecla X, seu idiota
+let lastXTime = parseInt(localStorage.getItem('lastXTime')) || 0; // Última vez que apertou 3 vezes o X
+const oneHour = 3600 * 1000; // 1 hora em milissegundos, seu burro
+
 document.addEventListener('keydown', function (event) {
-    if (event.key.toLowerCase() === 'x') { // Apertou X, seu idiota?
-        closeCounter++;
+    if (event.key.toLowerCase() === 'x') { // Apertou X, seu otário?
+        closeCounter++; // Conta essa porra
+
         if (closeCounter === 3) { // Três vezes, seu filho da mãe!
-            // Criar esse quadrado idiota
-            let square = document.createElement('div');
-            square.style.position = 'fixed'; // Fica parado, seu merda
-            square.style.top = '50%';
-            square.style.left = '50%';
-            square.style.transform = 'translate(-50%, -50%)';
-            square.style.width = '0'; // Começa pequeno, seu babaca
-            square.style.height = '0';
-            square.style.background = 'linear-gradient(45deg, #ff00ff, #00ffff)'; // Cores escrotas
-            square.style.borderRadius = '15px';
-            square.style.boxShadow = '0 0 20px rgba(255, 0, 255, 0.8)'; // Sombra ridícula
-            square.style.zIndex = '2000';
-            square.style.display = 'flex';
-            square.style.alignItems = 'center';
-            square.style.justifyContent = 'center';
-            square.style.color = '#fff'; // Texto branco, seu otário
-            square.style.fontFamily = 'Arial, sans-serif';
-            square.style.fontSize = '24px';
-            square.style.textAlign = 'center';
-            square.style.padding = '20px';
-            square.style.transition = 'all 0.5s ease-in-out'; // Animaçãozinha de merda
-            square.innerHTML = `
-                <div>
-                    <h2 style="margin: 0; font-size: 32px; text-shadow: 2px 2px 4px #000;">🎉 ATUALIZAÇÃO, SEU IMBECIL! 🎉</h2>
-                    <p style="margin: 10px 0 0; font-size: 20px;">Última atualização, seu trouxa:</p>
-                    <p style="font-size: 28px; font-weight: bold; color: #ffff00; text-shadow: 1px 1px 3px #000;">30/03/2025 14:50</p>
-                </div>
-            `;
-            document.body.appendChild(square); // Joga essa bosta na tela
+            visitCount++; // Incrementa o número de vezes que apertou 3 Xs
+            localStorage.setItem('xVisitCount', visitCount); // Salva essa merda
+            localStorage.setItem('lastXTime', Date.now()); // Salva o tempo atual, seu babaca
 
-            // Animação de entrada, seu retardado
-            setTimeout(() => {
-                square.style.width = '400px'; // Cresce, seu lixo
-                square.style.height = '300px';
-                square.style.transform = 'translate(-50%, -50%) rotate(5deg)'; // Gira um pouco, seu idiota
-            }, 10);
+            // Verifica se já passou mais de 3 vezes em menos de 1 hora
+            let timeSinceLastX = Date.now() - lastXTime;
+            if (visitCount > 3 && timeSinceLastX < oneHour) {
+                let insults = [
+                    'SEU FILHO DA PUTA, JÁ É A ' + visitCount + 'ª VEZ! PARA COM ESSA MERDA!',
+                    'VOCÊ É UM IDIOTA COMPLETO, SEU TROUXA! JÁ MOSTREI ESSA PORRA ' + visitCount + ' VEZES!',
+                    'SEU DESGRAÇADO, VAI TOMAR NO CU! APERTOU 3X ' + visitCount + ' VEZES, SEU LIXO!',
+                    'SEU IMBECIL DO CARALHO, PARA DE APERTAR ESSA BOSTA DE X! JÁ FORAM ' + visitCount + ' VEZES!',
+                    'SEU MERDA, TÁ ACHANDO QUE É BRINCADEIRA? ' + visitCount + ' VEZES EM MENOS DE 1 HORA, SEU NOJENTO!'
+                ];
+                let randomInsult = insults[Math.floor(Math.random() * insults.length)];
+                console.log(`%c${randomInsult}`, 'color: #ff0000; font-size: 24px; font-weight: bold;');
 
-            // Animação pulsante, que merda
-            let pulse = setInterval(() => {
-                square.style.boxShadow = '0 0 30px rgba(255, 0, 255, 1)'; // Pisca forte, seu burro
+                // Caixa de xingamento na tela
+                let insultBox = document.createElement('div');
+                insultBox.style.position = 'fixed';
+                insultBox.style.top = `${Math.random() * 80 + 10}%`; // Aleatório, seu burro
+                insultBox.style.left = `${Math.random() * 80 + 10}%`;
+                insultBox.style.transform = 'scale(0)';
+                insultBox.style.backgroundColor = '#ff0000'; // Vermelho pra te assustar, seu idiota
+                insultBox.style.color = 'white';
+                insultBox.style.padding = '20px';
+                insultBox.style.borderRadius = '10px';
+                insultBox.style.boxShadow = '0 0 20px rgba(255, 0, 0, 0.9)';
+                insultBox.style.zIndex = '3000';
+                insultBox.style.transition = 'transform 0.3s';
+                insultBox.style.fontSize = '22px';
+                insultBox.style.fontWeight = 'bold';
+                insultBox.innerText = randomInsult;
+                document.body.appendChild(insultBox);
+
+                setTimeout(() => insultBox.style.transform = 'scale(1)', 10);
                 setTimeout(() => {
-                    square.style.boxShadow = '0 0 20px rgba(255, 0, 255, 0.8)'; // Volta, seu babaca
-                }, 300);
-            }, 600);
+                    insultBox.style.transform = 'scale(0)';
+                    setTimeout(() => document.body.removeChild(insultBox), 300);
+                }, 2500);
+            } else {
+                // Quadrado divertido se não passou do limite
+                let square = document.createElement('div');
+                square.style.position = 'fixed';
+                square.style.top = '50%';
+                square.style.left = '50%';
+                square.style.transform = 'translate(-50%, -50%) scale(0) rotate(0deg)';
+                square.style.width = '400px';
+                square.style.height = '300px';
+                square.style.background = 'linear-gradient(45deg, #ff00ff, #00ffff, #ffff00)'; // Cores loucas, seu retardado
+                square.style.borderRadius = '20px';
+                square.style.boxShadow = '0 0 25px rgba(255, 0, 255, 1)';
+                square.style.zIndex = '2000';
+                square.style.display = 'flex';
+                square.style.alignItems = 'center';
+                square.style.justifyContent = 'center';
+                square.style.color = '#fff';
+                square.style.fontFamily = 'Arial, sans-serif';
+                square.style.fontSize = '26px';
+                square.style.textAlign = 'center';
+                square.style.padding = '25px';
+                square.style.transition = 'all 0.5s ease-in-out, transform 0.2s';
+                square.innerHTML = `
+                    <div>
+                        <h2 style="margin: 0; font-size: 36px; text-shadow: 3px 3px 5px #000;">🎉 ATUALIZAÇÃO FODA, SEU MERDA! 🎉</h2>
+                        <p style="margin: 15px 0 0; font-size: 22px;">Última mexida nessa bosta:</p>
+                        <p style="font-size: 32px; font-weight: bold; color: #ff69b4; text-shadow: 2px 2px 4px #000;">30/03/2025 14:50</p>
+                        <p style="font-size: 18px; margin-top: 10px;">💥 Você apertou 3X ${visitCount} vezes, seu louco!</p>
+                    </div>
+                `;
+                document.body.appendChild(square);
 
-            // Fechar essa porra depois de 5 segundos
-            setTimeout(() => {
-                square.style.width = '0'; // Encolhe, seu filho da puta
-                square.style.height = '0';
-                clearInterval(pulse); // Para essa merda pulsante
-                setTimeout(() => document.body.removeChild(square), 500); // Tira essa bosta da tela
-            }, 5000);
+                // Animação de entrada com giro
+                setTimeout(() => {
+                    square.style.transform = 'translate(-50%, -50%) scale(1) rotate(360deg)';
+                    console.log('%c🎵 TCHUN TCHUN TCHUN! FESTA NA TELA, SEU BURRO!', 'color: #ff00ff; font-size: 20px;');
+                }, 10);
 
-            square.addEventListener('click', () => { // Clica pra fechar, seu idiota
-                square.style.width = '0';
-                square.style.height = '0';
-                clearInterval(pulse); // Para essa porcaria
-                setTimeout(() => document.body.removeChild(square), 500); // Remove, seu otário
-            });
+                // Efeito pulsante psicodélico
+                let pulse = setInterval(() => {
+                    square.style.background = `linear-gradient(${Math.random() * 360}deg, #${Math.floor(Math.random()*16777215).toString(16)}, #${Math.floor(Math.random()*16777215).toString(16)})`;
+                    square.style.boxShadow = '0 0 35px rgba(255, 105, 180, 1)';
+                    setTimeout(() => square.style.boxShadow = '0 0 25px rgba(255, 0, 255, 1)', 200);
+                }, 400);
 
-            // Log animado no console, seu retardado
-            console.log('%c🔥 ATIVANDO ESSA MERDA DE CÓDIGO! 🔥', 'color: #ff00ff; font-size: 24px; font-weight: bold;');
-            setTimeout(() => {
-                console.log('%c🎉 CÓDIGO JAVASCRIPT ATIVADO, SEU FILHO DA MÃE! 🎉', 'color: #00ffff; font-size: 24px; font-weight: bold;');
-                console.log('%cÚltima atualização: 01/04/2025 11:02, SEU BURRO', 'color: #ffff00; font-size: 16px;');
-            }, 1000);
+                // Interatividade com mouse
+                square.addEventListener('mousemove', () => {
+                    square.style.transform = `translate(-50%, -50%) scale(1.05) rotate(${Math.random() * 10 - 5}deg)`;
+                });
 
-            closeCounter = 0; // Reseta essa porra de contador
+                // Fecha depois de 6 segundos ou ao clicar
+                setTimeout(() => {
+                    square.style.transform = 'translate(-50%, -50%) scale(0) rotate(-360deg)';
+                    clearInterval(pulse);
+                    setTimeout(() => document.body.removeChild(square), 500);
+                }, 6000);
+
+                square.addEventListener('click', () => {
+                    square.style.transform = 'translate(-50%, -50%) scale(0) rotate(-360deg)';
+                    clearInterval(pulse);
+                    setTimeout(() => document.body.removeChild(square), 500);
+                    console.log('%c💥 POW! Fechou essa merda rápido, seu esperto!', 'color: #ff4500; font-size: 20px;');
+                });
+
+                // Log animado
+                console.log('%c🎉 ATIVOU ESSA PORCARIA COM ESTILO, SEU FILHO DA PUTA! 🎉', 'color: #ff00ff; font-size: 24px; font-weight: bold;');
+                setTimeout(() => {
+                    console.log('%c🔥 CÓDIGO FODA ATIVADO, SEU TROUXA! 🔥', 'color: #00ffff; font-size: 24px; font-weight: bold;');
+                    console.log('%cÚltima atualização: 30/03/2025 14:50, SEU IDIOTA!', 'color: #ffff00; font-size: 16px;');
+                }, 1000);
+            }
+
+            closeCounter = 0; // Reseta essa bosta
         }
     }
 });
 
-// Registro oculto da última atualização, seu idiota
+// Registro oculto da última visita e atualização, seu retardado
 (function () {
-    let lastUpdate = 'Última atualização: 01/04/2025 11:03'; // Data de merda
-    console.log(`%c${lastUpdate}`, 'color: gray; font-size: 12px;'); // Loga essa bosta
+    let lastVisit = localStorage.getItem('lastVisit');
+    let lastUpdate = 'Última atualização: 30/03/2025 14:50'; // Data de merda
+    console.log(`%c${lastUpdate}`, 'color: gray; font-size: 12px;');
+    if (lastVisit) {
+        console.log(`%cÚltima vez que você entrou nessa merda: ${new Date(parseInt(lastVisit)).toLocaleString()}`, 'color: gray; font-size: 12px;');
+    } else {
+        console.log('%cPrimeira vez aqui, seu noob?', 'color: gray; font-size: 12px;');
+    }
 })();
