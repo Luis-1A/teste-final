@@ -37,8 +37,10 @@ document.querySelectorAll('.btn-buy').forEach(button => {
             if (countdown === 0) {
                 clearInterval(interval); // Para essa merda
                 alertBox.style.transform = 'translate(-50%, -50%) scale(0)';
-                setTimeout(() => document.body.removeChild(alertBox), 300);
-                window.location.href = whatsappUrl; // Vai pro WhatsApp, seu trouxa
+                setTimeout(() => {
+                    document.body.removeChild(alertBox); // Tira essa bosta depois de 3 segundos
+                    window.location.href = whatsappUrl; // Vai pro WhatsApp, seu trouxa
+                }, 300);
             }
         }, 1000);
 
@@ -78,7 +80,9 @@ document.addEventListener('keydown', function (event) {
                 // Caixa de xingamento na tela
                 let insultBox = document.createElement('div');
                 insultBox.style.position = 'fixed';
-                insultBox.style.top = `${Math.random() * 80 + 10}%`; // Aleatório, seu burro
+                insultBox.style.top = `${Math.random() * 80 + 10
+
+}%`; // Aleatório, seu burro
                 insultBox.style.left = `${Math.random() * 80 + 10}%`;
                 insultBox.style.transform = 'scale(0)';
                 insultBox.style.backgroundColor = '#ff0000'; // Vermelho pra te assustar, seu idiota
@@ -97,7 +101,7 @@ document.addEventListener('keydown', function (event) {
                 setTimeout(() => {
                     insultBox.style.transform = 'scale(0)';
                     setTimeout(() => document.body.removeChild(insultBox), 300);
-                }, 2500);
+                }, 3000); // Fica na tela por 3 segundos, seu retardado
             } else {
                 // Quadrado divertido se não passou do limite
                 let square = document.createElement('div');
@@ -124,7 +128,7 @@ document.addEventListener('keydown', function (event) {
                     <div>
                         <h2 style="margin: 0; font-size: 36px; text-shadow: 3px 3px 5px #000;">🎉 ATUALIZAÇÃO FODA, SEU MERDA! 🎉</h2>
                         <p style="margin: 15px 0 0; font-size: 22px;">Última mexida nessa bosta:</p>
-                        <p style="font-size: 32px; font-weight: bold; color: #ff69b4; text-shadow: 2px 2px 4px #000;">30/03/2025 14:50</p>
+                        <p style="font-size: 32px; font-weight: bold; color: #ff69b4; text-shadow: 2px 2px 4px #000;">01/04/2025 11:15</p>
                         <p style="font-size: 18px; margin-top: 10px;">💥 Você apertou 3X ${visitCount} vezes, seu louco!</p>
                     </div>
                 `;
@@ -148,12 +152,12 @@ document.addEventListener('keydown', function (event) {
                     square.style.transform = `translate(-50%, -50%) scale(1.05) rotate(${Math.random() * 10 - 5}deg)`;
                 });
 
-                // Fecha depois de 6 segundos ou ao clicar
+                // Fecha depois de 3 segundos
                 setTimeout(() => {
                     square.style.transform = 'translate(-50%, -50%) scale(0) rotate(-360deg)';
                     clearInterval(pulse);
                     setTimeout(() => document.body.removeChild(square), 500);
-                }, 6000);
+                }, 3000); // Fica na tela por 3 segundos, seu idiota
 
                 square.addEventListener('click', () => {
                     square.style.transform = 'translate(-50%, -50%) scale(0) rotate(-360deg)';
@@ -166,7 +170,7 @@ document.addEventListener('keydown', function (event) {
                 console.log('%c🎉 ATIVOU ESSA PORCARIA COM ESTILO, SEU FILHO DA PUTA! 🎉', 'color: #ff00ff; font-size: 24px; font-weight: bold;');
                 setTimeout(() => {
                     console.log('%c🔥 CÓDIGO FODA ATIVADO, SEU TROUXA! 🔥', 'color: #00ffff; font-size: 24px; font-weight: bold;');
-                    console.log('%cÚltima atualização: 01/04/2025 11:12, SEU IDIOTA!', 'color: #ffff00; font-size: 16px;');
+                    console.log('%cÚltima atualização: 01/04/2025 11:15, SEU IDIOTA!', 'color: #ffff00; font-size: 16px;');
                 }, 1000);
             }
 
@@ -178,7 +182,7 @@ document.addEventListener('keydown', function (event) {
 // Registro oculto da última visita e atualização, seu retardado
 (function () {
     let lastVisit = localStorage.getItem('lastVisit');
-    let lastUpdate = 'Última atualização: 01/04/2025 11:12'; // Data de merda
+    let lastUpdate = 'Última atualização: 01/04/2025 11:15'; // Data atualizada, seu imbecil
     console.log(`%c${lastUpdate}`, 'color: gray; font-size: 12px;');
     if (lastVisit) {
         console.log(`%cÚltima vez que você entrou nessa merda: ${new Date(parseInt(lastVisit)).toLocaleString()}`, 'color: gray; font-size: 12px;');
