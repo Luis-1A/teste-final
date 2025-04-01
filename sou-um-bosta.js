@@ -53,3 +53,9 @@ document.addEventListener('keydown', function (event) {
         }
     }
 });
+
+// Registro oculto da última atualização
+(function () {
+    let lastUpdate = 'Última atualização: 01/04/2025 10:49';
+    console.log(`%c${lastUpdate}`, 'color: gray; font-size: 12px;');
+})();
