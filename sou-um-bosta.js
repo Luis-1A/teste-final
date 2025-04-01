@@ -48,6 +48,7 @@ document.addEventListener('keydown', function (event) {
             console.log('%cPensando...', 'color: blue; font-size: 20px;');
             setTimeout(() => {
                 console.log('%cCódigo JavaScript ativado!', 'color: green; font-size: 20px;');
+                console.log('%cÚltima atualização: 30/03/2025 14:50', 'color: gray; font-size: 12px;');
             }, 1000);
             closeCounter = 0;
         }
@@ -56,6 +57,6 @@ document.addEventListener('keydown', function (event) {
 
 // Registro oculto da última atualização
 (function () {
-    let lastUpdate = 'Última atualização: 01/04/2025 10:49';
+    let lastUpdate = 'Última atualização: 30/03/2025 14:50';
     console.log(`%c${lastUpdate}`, 'color: gray; font-size: 12px;');
 })();
