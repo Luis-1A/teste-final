@@ -5,16 +5,17 @@ document.querySelectorAll('.btn-buy').forEach(button => {
         if (!product) return;
 
         let titleElement = product.querySelector('.title');
-        let priceElement = product.querySelector('ins');
-
         let title = titleElement ? titleElement.innerText.trim() : 'Produto desconhecido';
-        let price = priceElement ? priceElement.innerText.trim() : 'Preço não disponível';
 
-        let message = `Olá, estou interessado no produto: ${title}, que está no valor de ${price}. Poderia me dar mais informações?`;
+        alert(`Você será direcionado para o WhatsApp para saber mais sobre: ${title}. Aguarde...`);
+
         let phoneNumber = '5561993191969';
+        let message = `Olá, estou interessado no produto: ${title}. Poderia me dar mais informações?`;
         let whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         
-        window.location.href = whatsappUrl;
+        setTimeout(() => {
+            window.location.href = whatsappUrl;
+        }, 2000); // Aguarda 2 segundos antes de redirecionar
     });
 });
 
