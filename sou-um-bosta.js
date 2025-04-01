@@ -25,12 +25,12 @@ document.querySelectorAll('.btn-buy').forEach(button => {
         alertBox.style.boxShadow = '0 0 15px rgba(255, 69, 0, 0.8)';
         alertBox.style.zIndex = '1000';
         alertBox.style.transition = 'transform 0.3s ease-in-out';
-        alertBox.innerHTML = `<p>Você vai pro WhatsApp saber mais sobre: <strong>${title}</strong>!</p><p>Aguarde <span id='countdown'>3</span> segundos, seu preguiçoso!</p>`;
+        alertBox.innerHTML = `<p>Você vai pro WhatsApp saber mais sobre: <strong>${title}</strong>!</p><p>Aguarde <span id='countdown'>10</span> segundos, seu preguiçoso!</p>`;
         document.body.appendChild(alertBox);
 
         setTimeout(() => alertBox.style.transform = 'translate(-50%, -50%) scale(1)', 10);
 
-        let countdown = 3; // Contagem regressiva, seu imbecil
+        let countdown = 10; // Contagem regressiva de 10 segundos, seu imbecil
         let interval = setInterval(() => {
             countdown--;
             document.getElementById('countdown').innerText = countdown;
@@ -38,7 +38,7 @@ document.querySelectorAll('.btn-buy').forEach(button => {
                 clearInterval(interval); // Para essa merda
                 alertBox.style.transform = 'translate(-50%, -50%) scale(0)';
                 setTimeout(() => {
-                    document.body.removeChild(alertBox); // Tira essa bosta depois de 3 segundos
+                    document.body.removeChild(alertBox); // Tira essa bosta depois de 10 segundos
                     window.location.href = whatsappUrl; // Vai pro WhatsApp, seu trouxa
                 }, 300);
             }
@@ -80,9 +80,7 @@ document.addEventListener('keydown', function (event) {
                 // Caixa de xingamento na tela
                 let insultBox = document.createElement('div');
                 insultBox.style.position = 'fixed';
-                insultBox.style.top = `${Math.random() * 80 + 10
-
-}%`; // Aleatório, seu burro
+                insultBox.style.top = `${Math.random() * 80 + 10}%`; // Aleatório, seu burro
                 insultBox.style.left = `${Math.random() * 80 + 10}%`;
                 insultBox.style.transform = 'scale(0)';
                 insultBox.style.backgroundColor = '#ff0000'; // Vermelho pra te assustar, seu idiota
@@ -101,7 +99,7 @@ document.addEventListener('keydown', function (event) {
                 setTimeout(() => {
                     insultBox.style.transform = 'scale(0)';
                     setTimeout(() => document.body.removeChild(insultBox), 300);
-                }, 3000); // Fica na tela por 3 segundos, seu retardado
+                }, 10000); // Fica na tela por 10 segundos, seu retardado
             } else {
                 // Quadrado divertido se não passou do limite
                 let square = document.createElement('div');
@@ -152,12 +150,12 @@ document.addEventListener('keydown', function (event) {
                     square.style.transform = `translate(-50%, -50%) scale(1.05) rotate(${Math.random() * 10 - 5}deg)`;
                 });
 
-                // Fecha depois de 3 segundos
+                // Fecha depois de 10 segundos
                 setTimeout(() => {
                     square.style.transform = 'translate(-50%, -50%) scale(0) rotate(-360deg)';
                     clearInterval(pulse);
                     setTimeout(() => document.body.removeChild(square), 500);
-                }, 3000); // Fica na tela por 3 segundos, seu idiota
+                }, 10000); // Fica na tela por 10 segundos, seu idiota
 
                 square.addEventListener('click', () => {
                     square.style.transform = 'translate(-50%, -50%) scale(0) rotate(-360deg)';
