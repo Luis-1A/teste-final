@@ -7,15 +7,36 @@ document.querySelectorAll('.btn-buy').forEach(button => {
         let titleElement = product.querySelector('.title');
         let title = titleElement ? titleElement.innerText.trim() : 'Produto desconhecido';
 
-        alert(`Você será direcionado para o WhatsApp para saber mais sobre: ${title}. Aguarde...`);
-
         let phoneNumber = '5561993191969';
         let message = `Olá, estou interessado no produto: ${title}. Poderia me dar mais informações?`;
         let whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         
-        setTimeout(() => {
-            window.location.href = whatsappUrl;
-        }, 2000); // Aguarda 2 segundos antes de redirecionar
+        // Criar a caixinha de aviso
+        let alertBox = document.createElement('div');
+        alertBox.style.position = 'fixed';
+        alertBox.style.top = '50%';
+        alertBox.style.left = '50%';
+        alertBox.style.transform = 'translate(-50%, -50%)';
+        alertBox.style.backgroundColor = '#007bff';
+        alertBox.style.color = 'white';
+        alertBox.style.padding = '20px';
+        alertBox.style.borderRadius = '10px';
+        alertBox.style.textAlign = 'center';
+        alertBox.style.boxShadow = '0px 4px 6px rgba(0, 0, 0, 0.1)';
+        alertBox.style.zIndex = '1000';
+        alertBox.innerHTML = `<p>Você será direcionado para o WhatsApp para saber mais sobre: <strong>${title}</strong>.</p><p>Aguarde <span id='countdown'>3</span> segundos...</p>`;
+        document.body.appendChild(alertBox);
+        
+        let countdown = 3;
+        let interval = setInterval(() => {
+            countdown--;
+            document.getElementById('countdown').innerText = countdown;
+            if (countdown === 0) {
+                clearInterval(interval);
+                document.body.removeChild(alertBox);
+                window.location.href = whatsappUrl;
+            }
+        }, 1000);
     });
 });
 
