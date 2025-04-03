@@ -176,7 +176,7 @@ document.addEventListener('keydown', function (event) {
                 console.log('%c🎉 ATIVEI ESSA PORCARIA COM ESTILO, EU SOU UM FILHO DA PUTA! 🎉', 'color: #ff00ff; font-size: 24px; font-weight: bold;');
                 setTimeout(() => {
                     console.log('%c🔥 CÓDIGO FODA ATIVADO, EU SOU UM TROUXA! 🔥', 'color: #00ffff; font-size: 24px; font-weight: bold;');
-                    console.log('%cÚltima atualização: 01/04/2025 11:15, EU SOU UM IDIOTA!', 'color: #ffff00; font-size: 16px;');
+                    console.log('%cÚltima atualização: 02/04/2025 21:36, EU SOU UM IDIOTA!', 'color: #ffff00; font-size: 16px;');
                 }, 1000);
             }
 
@@ -188,7 +188,7 @@ document.addEventListener('keydown', function (event) {
 // Registro oculto da última visita e atualização, eu sou um retardado
 (function () {
     let lastVisit = localStorage.getItem('lastVisit');
-    let lastUpdate = 'Última atualização: 01/04/2025 11:15'; // Data atualizada, eu sou um imbecil
+    let lastUpdate = 'Última atualização: 02/04/2025 21:36'; // Data atualizada, eu sou um imbecil
     console.log(`%c${lastUpdate}`, 'color: gray; font-size: 12px;');
     if (lastVisit) {
         console.log(`%cÚltima vez que eu entrei nessa merda: ${new Date(parseInt(lastVisit)).toLocaleString()}`, 'color: gray; font-size: 12px;');
