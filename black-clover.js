@@ -194,4 +194,3 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Verifique o console para mais detalhes durante a execução.');
     console.log('Fim do script.');
   });
-
