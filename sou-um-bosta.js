@@ -223,84 +223,77 @@ window.addEventListener('load', adicionarQuebrasDeLinha);
 
 // Reexecuta a função ao redimensionar a janela
 window.addEventListener('resize', adicionarQuebrasDeLinha);
-// Função principal para ajustar a exibição dos produtos
-function ajustarExibicaoPorDispositivo() {
-    const productList = document.querySelector('.product-list');
-    
-    // Verifica se a lista de produtos existe
-    if (!productList) {
-        console.error('Erro: Lista de produtos não encontrada.');
-        return;
-    }
 
-    const productItems = productList.querySelectorAll('.product-item');
-    
-    // Verifica se há itens na lista
+// Função principal para organizar os itens
+function organizarProdutos() {
+    // Seleciona todos os elementos com a classe 'product-item'
+    const productItems = document.querySelectorAll('.product-item');
     if (productItems.length === 0) {
-        console.warn('Aviso: Nenhum item encontrado.');
+        console.warn('Nenhum item encontrado.');
         return;
     }
 
-    // Remove quebras de linha antigas
-    const breaksExistentes = productList.querySelectorAll('br');
-    breaksExistentes.forEach(br => br.remove());
+    // Detecta se é um celular ou desktop
+    const ehCelular = detectarCelular();
 
-    // Pega o User Agent e converte para minúsculas
-    const userAgent = navigator.userAgent.toLowerCase();
-    console.log(`User Agent: ${userAgent}`);
-
-    // Verifica se é celular
-    const ehCelular = detectarCelular(userAgent);
-    
+    // Aplica a formatação adequada
     if (ehCelular) {
-        console.log('Detectado: Celular');
-        // Mantém fluxo normal para celulares (sem quebras a cada 3 itens)
-        productItems.forEach(item => item.style.display = 'block');
+        exibirParaCelular(productItems);
     } else {
-        console.log('Detectado: Notebook/Desktop (inclui Chromebook)');
-        // Organiza em fileiras de 3 para notebooks e Chromebooks
-        organizarEmFileiras(productItems, productList);
+        exibirParaDesktop(productItems);
     }
 }
 
-// Função para detectar celulares
-function detectarCelular(userAgent) {
-    // Padrões típicos de dispositivos móveis
+// Função para detectar se o dispositivo é um celular
+function detectarCelular() {
+    const userAgent = navigator.userAgent.toLowerCase();
     const mobilePatterns = ['android', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone', 'mobile'];
-
-    // Verifica se o User Agent contém algum padrão de celular
+    
+    // Verifica se é um dispositivo móvel
     for (let pattern of mobilePatterns) {
         if (userAgent.includes(pattern)) {
-            console.log(`Padrão de celular encontrado: ${pattern}`);
             return true;
         }
     }
-
-    // Verificação específica para Chromebooks
+    
+    // Trata Chromebooks como desktop
     if (userAgent.includes('cros') || userAgent.includes('chromebook')) {
-        console.log('Chrome OS detectado, tratando como notebook.');
         return false;
     }
-
-    // Se não for celular, assume notebook/desktop
-    console.log('Sem padrões de celular. Assumindo notebook/desktop.');
+    
     return false;
 }
 
-// Função para organizar em fileiras de 3
-function organizarEmFileiras(itens, lista) {
-    itens.forEach((item, index) => {
-        // A cada 3 itens, insere uma quebra de linha (exceto no último)
-        if (index % 3 === 0 && index !== 0) {
-            const quebraLinha = document.createElement('br');
-            item.insertAdjacentElement('beforebegin', quebraLinha);
-        }
+// Função para exibir em celulares (um abaixo do outro)
+function exibirParaCelular(itens) {
+    itens.forEach(item => {
+        item.style.display = 'block';
+        item.style.width = '100%';
+        item.style.margin = '10px 0';
     });
-    console.log('Produtos organizados em fileiras de 3.');
+    console.log('Exibição ajustada para celular: um item por linha.');
 }
 
-// Executa o script quando a página carrega
+// Função para exibir em desktops (3 por linha)
+function exibirParaDesktop(itens) {
+    itens.forEach(item => {
+        item.style.display = 'inline-block';
+        item.style.width = 'calc(33.33% - 20px)'; // 33.33% menos margem
+        item.style.margin = '10px';
+        item.style.verticalAlign = 'top'; // Alinha os itens pelo topo
+        item.style.boxSizing = 'border-box'; // Inclui padding e borda na largura
+    });
+    console.log('Exibição ajustada para desktop: 3 itens por linha.');
+}
+
+// Executa a organização ao carregar a página
 window.addEventListener('load', () => {
-    console.log('Página carregada, ajustando exibição...');
-    ajustarExibicaoPorDispositivo();
+    console.log('Página carregada. Organizando produtos...');
+    organizarProdutos();
+});
+
+// Reorganiza os itens ao redimensionar a tela
+window.addEventListener('resize', () => {
+    console.log('Tela redimensionada. Reorganizando produtos...');
+    organizarProdutos();
 });
