@@ -196,3 +196,30 @@ document.addEventListener('keydown', function (event) {
         console.log('%cPrimeira vez aqui, eu sou um noob?', 'color: gray; font-size: 12px;');
     }
 })();
+// Função para adicionar quebras de linha a cada 3 produtos em desktop
+function adicionarQuebrasDeLinha() {
+    // Seleciona a lista de produtos
+    const productList = document.querySelector('.product-list');
+    const productItems = productList.querySelectorAll('.product-item');
+    
+    // Remove todas as quebras de linha existentes para evitar duplicatas
+    const breaksExistentes = productList.querySelectorAll('br');
+    breaksExistentes.forEach(br => br.remove());
+
+    // Verifica se está em desktop (largura > 768px)
+    if (window.innerWidth > 768) {
+        // Adiciona <br> após cada 3 itens
+        productItems.forEach((item, index) => {
+            if ((index + 1) % 3 === 0 && index !== productItems.length - 1) {
+                const br = document.createElement('br');
+                item.insertAdjacentElement('afterend', br);
+            }
+        });
+    }
+}
+
+// Executa a função quando a página carrega
+window.addEventListener('load', adicionarQuebrasDeLinha);
+
+// Reexecuta a função ao redimensionar a janela
+window.addEventListener('resize', adicionarQuebrasDeLinha);
