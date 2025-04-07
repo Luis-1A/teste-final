@@ -25,7 +25,7 @@ document.querySelectorAll('.btn-buy').forEach(button => {
         alertBox.style.boxShadow = '0 0 15px rgba(255, 69, 0, 0.8)';
         alertBox.style.zIndex = '1000';
         alertBox.style.transition = 'transform 0.3s ease-in-out';
-        alertBox.innerHTML = `<p>Vou pro WhatsApp saber mais sobre: <strong>${title}</strong>!</p><p>Aguarde <span id='countdown'>10</span> segundos, eu sou muito preguiçoso!</p>`;
+        alertBox.innerHTML = `<p>Vou pro WhatsApp saber mais sobre: <strong>${title}</strong>!</p><p>Aguarde <span id='countdown'>10</span> segundos!</p>`;
         document.body.appendChild(alertBox);
 
         setTimeout(() => alertBox.style.transform = 'translate(-50%, -50%) scale(1)', 10);
