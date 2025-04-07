@@ -405,3 +405,33 @@ p {
     }
   }
   
+  /* Estilo básico para a lista de produtos */
+.product-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Estilo para cada item de produto */
+.product-item {
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Para desktops e notebooks (largura maior que 768px) */
+@media (min-width: 769px) {
+    .product-item {
+        width: calc(33.33% - 20px); /* 3 itens por linha com margens */
+    }
+}
+
+/* Para celulares (largura até 768px) */
+@media (max-width: 768px) {
+    .product-item {
+        width: 100%; /* Um item por linha */
+    }
+}
