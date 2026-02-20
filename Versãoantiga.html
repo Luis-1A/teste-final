@@ -2,169 +2,810 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/header-footer-identidade.css">
-  <link rel="stylesheet" href="css/main/produtos.css">
-  <link rel="stylesheet" href="css/main/index.css">
-  <link rel="stylesheet" href="css/menu.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="shortcut icon" href="imagens/header-footer/logo.png" type="image/x-icon"> 
-  <title>WB Segurança Eletrônica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>WB Segurança Eletrônica | Brasília-DF</title>
+  <meta name="description" content="Segurança eletrônica em Brasília. Câmeras, alarmes, cerca elétrica. Orçamento grátis pelo WhatsApp (61) 99319-1969">
+  
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #1a237e;
+      --secondary: #ff6f00;
+      --dark: #0d1642;
+      --light: #f8f9fa;
+      --text: #212529;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    .navbar-custom {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+      padding: 0.5rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand {
+      color: white !important;
+      font-weight: 800;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-link {
+      color: rgba(255,255,255,0.9) !important;
+      font-weight: 600;
+      padding: 0.5rem 1rem !important;
+      transition: all 0.3s;
+    }
+
+    .nav-link:hover {
+      color: var(--secondary) !important;
+    }
+
+    .btn-whatsapp-nav {
+      background: #25d366;
+      color: white !important;
+      padding: 0.5rem 1rem !important;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .btn-whatsapp-nav:hover {
+      background: #128c7e;
+      transform: scale(1.05);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+      color: white;
+      padding: 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,111,0,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-hero {
+      background: var(--secondary);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s;
+      border: 2px solid var(--secondary);
+    }
+
+    .btn-hero:hover {
+      background: transparent;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .hero-badge {
+      background: rgba(255,255,255,0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(10px);
+    }
+
+    /* CAROUSEL */
+    .carousel-section {
+      padding: 2rem 0;
+      background: var(--light);
+    }
+
+    .carousel-item img {
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    /* SERVIÇOS */
+    .servicos {
+      padding: 3rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-title h2 {
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 1.8rem;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: var(--secondary);
+      border-radius: 2px;
+    }
+
+    .card-servico {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+      height: 100%;
+      border: 1px solid #eee;
+    }
+
+    .card-servico:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .card-img-wrapper {
+      height: 200px;
+      overflow: hidden;
+      background: #e3f2fd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .card-title {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn-saiba-mais {
+      background: var(--primary);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.3s;
+    }
+
+    .btn-saiba-mais:hover {
+      background: var(--secondary);
+      color: white;
+    }
+
+    /* DIFERENCIAIS */
+    .diferenciais {
+      background: var(--light);
+      padding: 3rem 0;
+    }
+
+    .diferencial-item {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .diferencial-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--primary), var(--dark));
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 1rem;
+    }
+
+    .diferencial-item h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .diferencial-item p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-weight: 800;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .btn-cta-large {
+      background: var(--secondary);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 1rem;
+      border: 3px solid var(--secondary);
+      transition: all 0.3s;
+    }
+
+    .btn-cta-large:hover {
+      background: transparent;
+      color: white;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--dark);
+      color: white;
+      padding: 3rem 0 1rem;
+    }
+
+    .footer h4 {
+      color: var(--secondary);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    .footer a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: all 0.3s;
+    }
+
+    .footer a:hover {
+      color: var(--secondary);
+      padding-left: 5px;
+    }
+
+    .footer-contact {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-contact li {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-contact i {
+      color: var(--secondary);
+      width: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    .social-links a:hover {
+      background: var(--secondary);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 5px 20px rgba(37,211,102,0.4);
+      z-index: 9999;
+      animation: pulse 2s infinite;
+      text-decoration: none;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+      70% { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+
+    .whatsapp-float:hover {
+      color: white;
+      transform: scale(1.1);
+    }
+
+    /* RESPONSIVIDADE - MOBILE FIRST */
+    
+    /* Tablets (768px+) */
+    @media (min-width: 768px) {
+      .hero {
+        padding: 4rem 0;
+      }
+      
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      
+      .carousel-item img {
+        height: 400px;
+      }
+      
+      .section-title h2 {
+        font-size: 2.2rem;
+      }
+    }
+
+    /* Desktop (992px+) */
+    @media (min-width: 992px) {
+      .navbar-brand {
+        font-size: 1.4rem;
+      }
+      
+      .navbar-brand img {
+        height: 50px;
+      }
+      
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+      
+      .hero p {
+        font-size: 1.3rem;
+      }
+      
+      .carousel-item img {
+        height: 500px;
+      }
+      
+      .card-img-wrapper {
+        height: 250px;
+      }
+    }
+
+    /* Ajustes para telas muito pequenas (menos de 375px) */
+    @media (max-width: 375px) {
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      
+      .hero-badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+      }
+      
+      .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="espaco-header"></div>
-    <section class="secao">
-      <div class="div-marca">
-        <div class="logo-container">
-          <div id="logo-container">
-            <a id="link-header" href="index.html">
-              <img id="logo-img" src="imagens/header-footer/logo.png" alt="Logo WB Segurança Eletrônica">
+
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="imagens/header-footer/logo.png" alt="WB Segurança">
+        <span class="d-none d-sm-inline">WB Segurança Eletrônica</span>
+        <span class="d-inline d-sm-none">WB Segurança</span>
+      </a>
+      
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#servicos">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#diferenciais">Diferenciais</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contato">Contato</a>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="btn btn-whatsapp-nav" href="https://wa.me/5561993191969" target="_blank">
+              <i class="fab fa-whatsapp me-1"></i>
+              <span class="d-none d-lg-inline">Orçamento</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <h1>Proteção Completa para sua Família e Empresa</h1>
+          <p>Instalação profissional de câmeras de segurança, alarmes e sistemas de monitoramento em Brasília-DF.</p>
+          <a href="https://wa.me/5561993191969" class="btn-hero" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            Solicitar Orçamento Grátis
+          </a>
+          
+          <div class="hero-badges">
+            <div class="hero-badge">
+              <i class="fas fa-shield-alt"></i>
+              <span>Instalação Rápida</span>
+            </div>
+            <div class="hero-badge">
+              <i class="fas fa-headset"></i>
+              <span>Suporte 24h</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block text-center">
+          <!-- Espaço para imagem/ilustração no desktop -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carousel -->
+  <section class="carousel-section">
+    <div class="container">
+      <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+        </div>
+        
+        <div class="carousel-inner rounded-4 shadow">
+          <div class="carousel-item active">
+            <img src="imagens/index-main/banner.jpg" class="d-block w-100" alt="WB Segurança">
+          </div>
+          <div class="carousel-item">
+            <img src="imagens/index-main/anuncio.png" class="d-block w-100" alt="Promoções">
+          </div>
+          <div class="carousel-item">
+            <img src="imagens/index-main/black-friday.png" class="d-block w-100" alt="Black Friday">
+          </div>
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section class="servicos" id="servicos">
+    <div class="container">
+      <div class="section-title">
+        <h2>Nossos Serviços</h2>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Serviço 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-servico">
+            <div class="card-img-wrapper">
+              <img src="imagens/produtos/foto-7.png" alt="Vex 1050 HDMI">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Vex 1050 HDMI</h3>
+              <p class="card-text">Extensor profissional de áudio e vídeo HDMI com transmissão em Full HD 1080p. Ideal para grandes distâncias.</p>
+              <a href="https://wa.me/5561993191969?text=Olá! Tenho interesse no Vex 1050 HDMI" class="btn-saiba-mais" target="_blank">
+                Solicitar Orçamento <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Serviço 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-servico">
+            <div class="card-img-wrapper">
+              <img src="imagens/produtos/foto-9.png" alt="iM7 Full Color">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">iM7 Full Color</h3>
+              <p class="card-text">Câmera inteligente externa Wi-Fi com visão noturna colorida, resolução Full HD 360° e detecção de movimento.</p>
+              <a href="https://wa.me/5561993191969?text=Olá! Tenho interesse na câmera iM7 Full Color" class="btn-saiba-mais" target="_blank">
+                Solicitar Orçamento <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Serviço 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-servico">
+            <div class="card-img-wrapper">
+              <img src="imagens/produtos/foto-2.png" alt="Casa Inteligente">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Casa Inteligente</h3>
+              <p class="card-text">Automação completa com controle de iluminação, temperatura, cortinas e segurança integrada via smartphone.</p>
+              <a href="https://wa.me/5561993191969?text=Olá! Tenho interesse em Casa Inteligente" class="btn-saiba-mais" target="_blank">
+                Solicitar Orçamento <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-4">
+        <a href="serviços.html" class="btn btn-lg px-4" style="background: var(--primary); color: white; border-radius: 50px; font-weight: 600;">
+          Ver Todos os Serviços
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferenciais -->
+  <section class="diferenciais" id="diferenciais">
+    <div class="container">
+      <div class="section-title">
+        <h2>Por que Escolher a WB?</h2>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-6 col-lg-3">
+          <div class="diferencial-item">
+            <div class="diferencial-icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <h3>Experiência</h3>
+            <p>Anos de atuação em Brasília</p>
+          </div>
+        </div>
+        
+        <div class="col-6 col-lg-3">
+          <div class="diferencial-item">
+            <div class="diferencial-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <h3>Instalação</h3>
+            <p>Equipe técnica especializada</p>
+          </div>
+        </div>
+        
+        <div class="col-6 col-lg-3">
+          <div class="diferencial-item">
+            <div class="diferencial-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Monitoramento</h3>
+            <p>Acesso remoto via celular</p>
+          </div>
+        </div>
+        
+        <div class="col-6 col-lg-3">
+          <div class="diferencial-item">
+            <div class="diferencial-icon">
+              <i class="fas fa-hand-holding-usd"></i>
+            </div>
+            <h3>Preço Justo</h3>
+            <p>Orçamento transparente</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Pronto para Proteger seu Patrimônio?</h2>
+      <p>Orçamento gratuito e sem compromisso. Atendemos toda Brasília-DF.</p>
+      <a href="https://wa.me/5561993191969" class="btn-cta-large" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        Falar no WhatsApp Agora
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contato">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <h4>WB Segurança Eletrônica</h4>
+          <p>Especialistas em segurança eletrônica em Brasília-DF. Soluções completas em câmeras, alarmes e automação.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/wb.segurancaeletronica/" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5561993191969" target="_blank">
+              <i class="fab fa-whatsapp"></i>
             </a>
           </div>
         </div>
-        <h1>WB Segurança Eletrônica</h1>
-      </div>
-      <div id="calabresa">
-        <nav class="desktop-nav">
+        
+        <div class="col-md-6 col-lg-4">
+          <h4>Contato Rápido</h4>
+          <ul class="footer-contact">
+            <li>
+              <i class="fab fa-whatsapp"></i>
+              <a href="https://wa.me/5561993191969">(61) 99319-1969</a>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <a href="tel:+5561993191969">(61) 99319-1969</a>
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Brasília - DF</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="col-md-6 col-lg-4">
+          <h4>Links Rápidos</h4>
+          <a href="index.html">Home</a>
           <a href="serviços.html">Serviços</a>
-          <a href="quem-somos.html">Empresa</a>
-        </nav>
-        <button id="menu-toggle" class="menu-btn">Menu</button>
-        <div id="mobile-overlay" class="mobile-overlay">
-          <button class="close-btn">X</button>
-          <nav class="mobile-nav">
-            <a href="serviços.html">Serviços</a>
-            <a href="quem-somos.html">Empresa</a>
-          </nav>
+          <a href="quem-somos.html">Quem Somos</a>
+          <a href="https://wa.me/5561993191969">Orçamento</a>
         </div>
       </div>
-    </section>
-    <div class="espaco-header"></div>
-  </header>
-
-  <main>
-    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
-          <img src="imagens/index-main/banner.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <img src="imagens/index-main/anuncio.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="imagens/index-main/black-friday.png" class="d-block w-100" alt="...">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-
-    <div class="promocoes" data-aos="fade-right">
-      <h2 class="text-promocoes">Promoções</h2>
-    </div>
-
-    <ul class="product-list" data-aos="fade-right">
-      <li class="product-item">
-        <a href="#" target="_blank" class 𝓮="product-link">
-          <figure class="product-info">
-            <div class="product-info-img">
-              <img src="imagens/produtos/foto-7.png" alt="description image">
-            </div>
-            <figcaption class="product-info-description">
-              <h2 class="title">Vex 1050 HDMI</h2>
-              <p class="description">extensor de áudio e vídeo</p>
-              <ul class="star-ranking">
-                <li class="qtd-votes">full HD (1080p)</li>
-              </ul>
-            </figcaption>
-            <div class="price-box">
-              <div class="price">
-                
-               
-              </div>
-              <a href="serviços.html" class="btn btn-buy">ver serviços <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </figure>
-        </a>
-      </li>
-      <li class="product-item">
-        <a href="#" target="_blank" class="product-link">
-          <figure class="product-info">
-            <div class="product-info-img">
-              <img src="imagens/produtos/foto-9.png" alt="description image">
-            </div>
-            <figcaption class="product-info-description">
-              <h2 class="title">iM7 Full color</h2>
-              <p class="description">câmera inteligente externa WI-FI full HD 360</p>
-              <ul class="star-ranking"></ul>
-            </figcaption>
-            <div class="price-box">
-              <div class="price">
-                
-              </div>
-              <a href="serviços.html" class="btn btn-buy">ver serviços <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </figure>
-        </a>
-      </li>
-      <li class="product-item">
-        <a href="#" target="_blank" class="product-link">
-          <figure class="product-info">
-            <div class="product-info-img">
-              <img src="imagens/produtos/foto-2.png" alt="description image">
-            </div>
-            <figcaption class="product-info-description">
-              <h2 class="title">sistema de casa inteligente</h2>
-              <p class="description">Um **Sistema de Casa Inteligente** automatiza e controla dispositivos e sistemas domésticos para aumentar a conveniência, segurança e eficiência energética.</p>
-              <ul class="star-ranking"></ul>
-            </figcaption>
-            <div class="price-box">
-              <div class="price">
-                
-              </div>
-              <a href="serviços.html" class="btn btn-buy">ver serviços <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </figure>
-        </a>
-      </li>
-    </ul>
-  </main>
-
-  <footer>
-    <div class="fechamento-footer-green"></div>
-    <div class="espaco"></div>
-    <div class="div-footer-content">
-      <div class="div-contact">
-        <h2 class="titulo-contact-us">Contact us</h2>
-        <p>• Telefone: +55 61 99319-1969</p>
-                <p>• WhatsApp: +55 61 99319-1969</p>
-      </div>
-      <div class="redes-sociais-footerr">
-        <a href="https://www.instagram.com/wb.segurancaeletronica/profilecard/?igsh=MXRlYWFob2J1NHg5Yw==" target="_blank">
-          <img width="35px" src="imagens/header-footer/instagram.png" alt="">
-        </a>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 WB Segurança Eletrônica. Todos os direitos reservados.</p>
       </div>
     </div>
-    <div class="espaco"></div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="black-clover.js"></script>
-  <script src="vou-com-fe.js"></script>
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/5561993191969" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
   <script>
-    AOS.init();
+    // Atualizar ano no footer
+    document.querySelector('.footer-bottom p').innerHTML = 
+      `&copy; ${new Date().getFullYear()} WB Segurança Eletrônica. Todos os direitos reservados.`;
+    
+    // Fechar menu mobile ao clicar em link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+          navbarCollapse.classList.remove('show');
+        }
+      });
+    });
   </script>
 </body>
 </html>
