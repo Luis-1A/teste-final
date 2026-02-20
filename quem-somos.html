@@ -1,108 +1,390 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/header-footer-identidade.css">
-    <link rel="stylesheet" href="css/main/quem-somos.css">
-    <link rel="shortcut icon" href="imagens/header-footer/logo.png" type="image/x-icon">
-    <title>Quem somos</title>
+    <title>Manutenção | Em Breve</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0a0a0a;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated gradient background */
+        .gradient-bg {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 40%);
+            animation: gradientMove 20s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes gradientMove {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(5%, 5%) rotate(5deg); }
+            66% { transform: translate(-5%, 3%) rotate(-5deg); }
+        }
+
+        /* Floating particles */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main container */
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 3rem;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Icon */
+        .icon-wrapper {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .gear {
+            width: 100%;
+            height: 100%;
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .gear svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            stroke-width: 2;
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* Progress bar */
+        .progress-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 3rem;
+            position: relative;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            width: 0%;
+            border-radius: 2px;
+            animation: progress 3s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+        }
+
+        @keyframes progress {
+            0% { width: 0%; left: 0; }
+            50% { width: 70%; }
+            100% { width: 0%; left: 100%; }
+        }
+
+        .progress-text {
+            margin-top: 0.75rem;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Buttons */
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 10px 30px -10px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -10px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Status indicator */
+        .status {
+            margin-top: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            h1 { font-size: 2.5rem; }
+            .container { padding: 2rem; margin: 1rem; }
+            .icon-wrapper { width: 80px; height: 80px; }
+        }
+
+        /* Glitch effect on hover for title */
+        h1:hover {
+            animation: glitch 0.3s ease;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+    </style>
 </head>
 <body>
-    <header> <!--Inicio do cabeçalho-->
-        <div class="espaco-header"></div>
-        <section class="secao"> <!--Inicio da seção do conteúdo do cabeçalho-->
-            <div class="div-marca">
-                <!--Logo da marca-->
-                <div class="logo-container">
-                    <div id="logo-container">
-                        <a id="link-header" href="index.html">
-                          <img id="logo-img" src="imagens/header-footer/logo.png" alt="Logo WB Segurança Eletrônica">
-                        </a>
-                      </div>
-    </div>
-    <h1>WB SEGURANÇA ELETRÔNICA</h1>
+    <div class="gradient-bg"></div>
+
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <div class="icon-wrapper">
+            <div class="gear">
+                <svg viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="1.5">
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#667eea"/>
+                            <stop offset="100%" style="stop-color:#764ba2"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1m20.07-4.93l-4.24 4.24M7.17 16.83l-4.24 4.24M23 12h-6m-6 0H1m20.07 4.93l-4.24-4.24M7.17 7.17L2.93 2.93"/>
+                </svg>
             </div>
-            
-            <div id="calabresa">
-                <nav class="desktop-nav">
-                  <a href="serviços.html">Serviços</a>
-                  <a href="index.html">Home</a>
-                </nav>
-                <button id="menu-toggle" class="menu-btn">Menu</button>
-                <div id="mobile-overlay" class="mobile-overlay">
-                  <button class="close-btn">X</button> <!-- Botão para fechar o overlay -->
-                  <nav class="mobile-nav">
-                    <a href="serviços.html">Serviços</a>
-                  <a href="index.html">Home</a>
-                  </nav>
-                </div>
-              </div>
-        </section>
-        </section> <!--FIm da seção do conteúdo do cabeçalho-->
-        <div class="espaco-header"></div>
-    </header> <!--Fim do cabeçalho-->
+        </div>
 
-    <main> <!--Inicio do Main-->
-        <div class="meio"> <!--Inicio da parte principal que ficara no centro-->
-            <div class="text-principal" data-aos="zoom-in-right"> <!--Inicio do titulo e sibtitulo-->
-                <div class="linha"></div> 
-                <div>
-                    <h2>WB SEGURANÇA ELETRÔNICA</h2> 
-                    <h2> SUA PROTEÇÃO</h2> 
-                    <h2>EM PRIMEIRO LUGAR</h2>
-                    <p>"WB Segurança Eletrônica – Tecnologia e confiança para proteger o que realmente importa!"** 🚀🔒</p>
-                </div> 
-            </div> <!--Fim do titulo e subtitulo-->
-            <!--Inicio conteudo principal-->
-                <div class="imagens">
-                    <img width="500px" height="300pxpx" src="imagens/quem-somos/empresa-de-pesquisa-de-mercado.png" alt="">
-                </div>
-                <div class="text">
-                    <p>Desde ****, a WB Segurança Eletrônica se dedica a oferecer as melhores soluções em segurança para residências, empresas e condomínios. Com um compromisso inabalável com a qualidade, inovação e confiabilidade, buscamos proporcionar tranquilidade para nossos clientes, garantindo que seu patrimônio e seus entes queridos estejam sempre protegidos.</p>
-                    <p>Com o avanço da tecnologia, a segurança evoluiu e, hoje, é possível monitorar e proteger seus bens de qualquer lugar do mundo. Trabalhamos com equipamentos de última geração, que oferecem imagens de alta definição, alertas instantâneos e total integração com seu smartphone. Nossa equipe altamente qualificada está pronta para oferecer suporte completo, desde o planejamento até a instalação e manutenção dos sistemas de segurança.</p>
-                </div>
-                <div class="imagens" id="parallax">
-                    <!-- <img width="100%" src="_imagens/quem-somos/fusões-aquisições.jpg" alt=""> -->
-                </div>
-                <div class="frase-motivacional" data-aos="fade-up">
-                    <p class="texto-frase-motivacional">POR QUE ESCOLHER A WB SEGURANÇA ELETRÔNICA?</p>
-                </div>
-                <div class="text">
-                    <p>Na WB Segurança Eletrônica, acreditamos que segurança vai muito além de simplesmente instalar equipamentos. Nosso objetivo é proporcionar tranquilidade e proteção para você, sua família e seus negócios.</p>
-                    <p> ✅ Experiência e Credibilidade – Mais de #### anos de atuação no mercado de segurança eletrônica. <br>
-                        ✅ Tecnologia de Ponta – Trabalhamos com as melhores marcas e soluções inovadoras. <br>
-                        ✅ Atendimento Personalizado – Cada cliente é único, e nossas soluções são feitas sob medida para cada necessidade. <br>
-                        ✅ Suporte Especializado – Nossa equipe está sempre disponível para atender você com eficiência e profissionalismo. <br>
-                        <br><br>
-                        Seja para proteger sua casa, empresa ou condomínio, a WB Segurança Eletrônica tem a solução ideal para você.</p>
-                </div>
-            <!--Fim do conteudo principal-->
-        </div> <!--Fim da parte principal-->
-    </main> <!--Final do Main-->
+        <h1>Em Manutenção</h1>
 
-    <footer> <!--Inicio do rodapé-->
-        <div class="fechamento-footer-green"></div>
-        <div class="espaco"></div>
-        <div class="div-footer-content"> <!--Inicio do conteudo do rodapé-->
-            
-            <div class="div-contact"> <!--Inicio da área de contatos-->
-                <p>• Telefone: +55 61 99319-1969</p>
-                <p>• WhatsApp: +55 61 99319-1969</p>
-            </div> <!--Fim da área de contatos-->
-            <div class="redes-sociais-footer"> <!--Inicio das imagens com links para as redes sociais-->
-                <a href="https://www.instagram.com/wb.segurancaeletronica/profilecard/?igsh=MXRlYWFob2J1NHg5Yw==" target="_blank"><img width="35px" src="imagens/header-footer/instagram.png" alt=""></a>
-                 </div> <!--Fim das imagens com links para as redes sociais-->
-        </div> <!--Fim do conteúdo do rodapé-->
-        <div class="espaco"></div>
-    </footer> <!--Fim do rodapé-->
-    <script src="black-clover.js"></script>
+        <p class="subtitle">
+            Estamos trabalhando para trazer uma experiência ainda melhor para você.<br>
+            Volte em breve para conferir as novidades.
+        </p>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="progress-text">Atualizando sistema...</div>
+        </div>
+
+   <!--     <div class="button-group">
+            <a href="Versãoantiga.html" class="btn btn-secondary">
+                <span>↩ Acessar Versão Anterior</span>
+            </a>-->
+            <button class="btn btn-primary" onclick="notifyMe()">
+                <span>Me Notificar</span>
+            </button>
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            <span>Sistema operacional</span>
+        </div>
+    </div>
+
     <script>
-        AOS.init();
+        // Create floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particle.style.opacity = Math.random() * 0.5 + 0.2;
+                container.appendChild(particle);
+            }
+        }
+
+        // Notification function
+        function notifyMe() {
+            const btn = document.querySelector('.btn-primary');
+            const originalText = btn.innerHTML;
+
+            btn.innerHTML = '<span>✓ Você será notificado!</span>';
+            btn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = '';
+            }, 3000);
+        }
+
+        // Add mouse parallax effect
+        document.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth - e.pageX) / 50;
+            const y = (window.innerHeight - e.pageY) / 50;
+
+            document.querySelector('.container').style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        // Initialize
+        createParticles();
+
+        // Dynamic time update
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('pt-BR', { 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            });
+            // Could display time if needed
+        }
+
+        setInterval(updateTime, 1000);
     </script>
 </body>
 </html>
