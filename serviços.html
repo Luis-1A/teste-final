@@ -1,240 +1,776 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/header-footer-identidade.css">
-    <link rel="stylesheet" href="css/main/produtos.css">
-    <link rel="shortcut icon" href="imagens/header-footer/logo.png" type="image/x-icon">
-    <title>Serviços</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços | WB Segurança Eletrônica - Brasília-DF</title>
+  <meta name="description" content="Conheça todos os serviços da WB Segurança Eletrônica: Câmeras, Alarmes, Cerca Elétrica, Motor de Portão e mais. Orçamento grátis pelo WhatsApp (61) 99319-1969">
+  
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #1a237e;
+      --secondary: #ff6f00;
+      --dark: #0d1642;
+      --light: #f8f9fa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: var(--light);
+    }
+
+    /* HEADER - Mesmo estilo da página inicial */
+    .navbar-custom {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+      padding: 0.8rem 0;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-container {
+      background: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      flex-shrink: 0;
+    }
+
+    .logo-container img {
+      width: 85%;
+      height: 85%;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand-title {
+      color: white;
+      font-weight: 800;
+      font-size: 1.3rem;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-subtitle {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-link {
+      color: rgba(255,255,255,0.9) !important;
+      font-weight: 600;
+      padding: 0.5rem 1rem !important;
+      transition: all 0.3s;
+      border-radius: 8px;
+    }
+
+    .nav-link:hover {
+      background: rgba(255,255,255,0.1);
+      color: white !important;
+    }
+
+    .btn-whatsapp-nav {
+      background: #25d366;
+      color: white !important;
+      padding: 0.6rem 1.2rem !important;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: 2px solid #25d366;
+      transition: all 0.3s;
+    }
+
+    .btn-whatsapp-nav:hover {
+      background: transparent;
+      color: #25d366 !important;
+      transform: scale(1.05);
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+      color: white;
+      padding: 4rem 0 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,111,0,0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .page-header-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .page-header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* SERVIÇOS GRID */
+    .servicos-section {
+      padding: 3rem 0 5rem;
+      margin-top: -3rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .servico-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      height: 100%;
+      border: 1px solid #eee;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .servico-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .servico-img {
+      height: 220px;
+      background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .servico-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .servico-card:hover .servico-img img {
+      transform: scale(1.1);
+    }
+
+    .servico-icon {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 45px;
+      height: 45px;
+      background: var(--secondary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 10px rgba(255,111,0,0.3);
+    }
+
+    .servico-content {
+      padding: 1.8rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .servico-content h3 {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.3;
+    }
+
+    .servico-content p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      flex-grow: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .servico-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .servico-features li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .servico-features li i {
+      color: var(--accent);
+      font-size: 0.8rem;
+    }
+
+    .btn-servico {
+      background: var(--primary);
+      color: white;
+      padding: 0.9rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.3s;
+      border: 2px solid var(--primary);
+      margin-top: auto;
+    }
+
+    .btn-servico:hover {
+      background: transparent;
+      color: var(--primary);
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-weight: 800;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .btn-cta-large {
+      background: var(--secondary);
+      color: white;
+      padding: 1.2rem 3rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 1.5rem;
+      border: 3px solid var(--secondary);
+      transition: all 0.3s;
+    }
+
+    .btn-cta-large:hover {
+      background: transparent;
+      color: white;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--dark);
+      color: white;
+      padding: 4rem 0 1.5rem;
+    }
+
+    .footer h4 {
+      color: var(--secondary);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .footer p {
+      color: rgba(255,255,255,0.8);
+      line-height: 1.8;
+    }
+
+    .footer a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.8rem;
+      transition: all 0.3s;
+    }
+
+    .footer a:hover {
+      color: var(--secondary);
+      padding-left: 5px;
+    }
+
+    .footer-contact {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-contact li {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .footer-contact i {
+      color: var(--secondary);
+      font-size: 1.2rem;
+      width: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-links a {
+      width: 45px;
+      height: 45px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      transition: all 0.3s;
+    }
+
+    .social-links a:hover {
+      background: var(--secondary);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 3rem;
+      padding-top: 2rem;
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+    }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25d366;
+      color: white;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      box-shadow: 0 5px 25px rgba(37,211,102,0.4);
+      z-index: 9999;
+      animation: pulse 2s infinite;
+      text-decoration: none;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+      70% { box-shadow: 0 0 0 20px rgba(37,211,102,0); }
+    }
+
+    .whatsapp-float:hover {
+      color: white;
+      transform: scale(1.1);
+    }
+
+    /* RESPONSIVIDADE */
+    @media (min-width: 768px) {
+      .page-header h1 {
+        font-size: 2.8rem;
+      }
+      
+      .servico-img {
+        height: 250px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .logo-container {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .page-header h1 {
+        font-size: 3.2rem;
+      }
+      
+      .servico-img {
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 375px) {
+      .brand-title {
+        font-size: 1.1rem;
+      }
+      
+      .page-header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header> <!-- Início do cabeçalho -->
-        <div class="espaco-header"></div>
-        <section class="secao"> <!-- Início da seção do conteúdo do cabeçalho -->
-            <div class="div-marca">
-                <!-- Logo da marca -->
-                <div class="logo-container">
-                    <div id="logo-container">
-                        <a id="link-header" href="index.html">
-                            <img id="logo-img" src="imagens/header-footer/logo.png" alt="Logo WB Segurança Eletrônica">
-                        </a>
-                    </div>
-                </div>
-                <h1>WB Segurança Eletrônica</h1>
+
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <div class="logo-container">
+          <img src="imagens/header-footer/logo.png" alt="WB Segurança">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">WB Segurança</span>
+          <span class="brand-subtitle">Eletrônica</span>
+        </div>
+      </a>
+      
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="serviços.html">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quem-somos.html">Empresa</a>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="btn btn-whatsapp-nav" href="https://wa.me/5561993191969" target="_blank">
+              <i class="fab fa-whatsapp me-2"></i>
+              <span class="d-none d-lg-inline">Orçamento</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <div class="page-header-content">
+        <h1>Nossos Serviços</h1>
+        <p>Soluções completas em segurança eletrônica para residências e empresas em Brasília-DF. Tecnologia de ponta com instalação profissional.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section class="servicos-section">
+    <div class="container">
+      <div class="row g-4">
+        
+        <!-- Serviço 1: Câmeras de Segurança -->
+        <div class="col-md-6 col-lg-4">
+          <div class="servico-card">
+            <div class="servico-img">
+              <img src="imagens/produtos/foto-4.png" alt="Câmeras de Segurança">
+              <div class="servico-icon">
+                <i class="fas fa-video"></i>
+              </div>
             </div>
-            <div id="calabresa">
-                <nav class="desktop-nav">
-                    <a href="index.html">Home</a>
-                    <a href="quem-somos.html">Empresa</a>
-                </nav>
-                <button id="menu-toggle" class="menu-btn">Menu</button>
-                <div id="mobile-overlay" class="mobile-overlay">
-                    <button class="close-btn">X</button> <!-- Botão para fechar o overlay -->
-                    <nav class="mobile-nav">
-                        <a href="index.html">Home</a>
-                        <a href="quem-somos.html">Empresa</a>
-                    </nav>
-                </div>
+            <div class="servico-content">
+              <h3>Câmeras de Segurança</h3>
+              <p>Monitoramento 24h com câmeras HD e Full Color. Acesso remoto via celular, visão noturna inteligente e gravação em nuvem.</p>
+              <a href="https://wa.me/5561993191969?text=Olá! Tenho interesse em Câmeras de Segurança" class="btn-servico" target="_blank">
+                <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+              </a>
             </div>
-        </section> <!-- Fim da seção do conteúdo do cabeçalho -->
-        <div class="espaco-header"></div>
-    </header> <!-- Fim do cabeçalho -->
+          </div>
+        </div>
 
-    <main> <!-- Início do Main -->
-        <ul class="product-list"> <!-- Início da lista de serviços -->
-            <!-- Serviço 1: Câmeras de Segurança -->
-            <li class="product-item">
-                <a href="#" target="_blank" class="product-link">
-                    <figure class="product-info">
-                        <div class="product-info-img">
-                            <img src="imagens/produtos/foto-4.png" alt="Câmera de segurança dome em alta resolução">
-                        </div>
-                        <figcaption class="product-info-description">
-                            <h2 class="title">Câmeras de Segurança</h2>
-                            <p class="description">Soluções avançadas de monitoramento com câmeras de alta definição, ideais para residências e empresas.</p>
-                        </figcaption>
-                        <div class="price-box">
-                            <div class="price">
-                                <div></div> <!-- Espaço para preço, se desejar -->
-                            </div>
-                            <button class="btn btn-buy">Saiba mais <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </figure>
-                </a>
+        <!-- Serviço 2: DVR -->
+        <div class="col-md-6 col-lg-4">
+          <div class="servico-card">
+            <div class="servico-img">
+              <img src="imagens/produtos/dvr.png" alt="DVR - Gravador Digital">
+              <div class="servico-icon">
+                <i class="fas fa-hdd"></i>
+              </div>
+            </div>
+            <div class="servico-content">
+              <h3>DVR / NVR</h3>
+              <p>Gravadores digitais para armazenamento de imagens em alta qualidade. Acesso remoto, backup automático e compatibilidade com múltiplas câmeras.</p>
+              <a href="https://wa.me/5561993191969?text=Olá! Tenho interesse em DVR/NVR" class="btn-servico" target="_blank">
+                <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Serviço 3: Sensores -->
+        <div class="col-md-6 col-lg-4">
+          <div class="servico-card">
+            <div class="servico-img">
+              <img src="imagens/produtos/sensor.png" alt="Sensores de Presença">
+              <div class="servico-icon">
+                <i class="fas fa-wifi"></i>
+              </div>
+            </div>
+            <div class="servico-content">
+              <h3>Sensores e Detectores</h3>
+              <p>Sensores de movimento infravermelho, magnéticos para portas/janelas e detectores de fumaça. Integração total com sistema de alarme.</p>
+              <a href="https://wa.me/5561993191969?text=Olá! Tenho interesse em Sensores" class="btn-servico" target="_blank">
+                <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Serviço 4: Cerca Elétrica -->
+        <div class="col-md-6 col-lg-4">
+          <div class="servico-card">
+            <div class="servico-img">
+              <img src="imagens/produtos/foto-3.png" alt="Cerca Elétrica">
+              <div class="servico-icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+            </div>
+            <div class="servico-content">
+              <h3>Cerca Elétrica</h3>
+              <p>Proteção perimetral com choque elétrico não letal. Central inteligente com alarme, bateria backup e instalação profissional.</p>
+              <a href="https://wa.me/5561993191969?text=Olá! Tenho interesse em Cerca Elétrica" class="btn-servico" target="_blank">
+                <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Serviço 5: Alarme -->
+        <div class="col-md-6 col-lg-4">
+          <div class="servico-card">
+            <div class="servico-img">
+              <img src="imagens/produtos/alarme.png" alt="Sistema de Alarme">
+              <div class="servico-icon">
+                <i class="fas fa-bell"></i>
+              </div>
+            </div>
+            <div class="servico-content">
+              <h3>Sistemas de Alarme</h3>
+              <p>Alarmes residenciais e comerciais com monitoramento 24h, sirene potente, controle remoto e aplicativo para arme/desarme.</p>
+              <a href="https://wa.me/5561993191969?text=Olá! Tenho interesse em Sistema de Alarme" class="btn-servico" target="_blank">
+                <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Serviço 6: Concertina -->
+        <div class="col-md-6 col-lg-4">
+          <div class="servico-card">
+            <div class="servico-img">
+              <img src="imagens/produtos/foto-1.png" alt="Concertina">
+              <div class="servico-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+            </div>
+            <div class="servico-content">
+              <h3>Concertina</h3>
+              <p>Barreira de segurança cortante em aço galvanizado. Instalação sobre muros e grades para proteção anti-intrusão eficaz.</p>
+              <a href="https://wa.me/5561993191969?text=Olá! Tenho interesse em Concertina" class="btn-servico" target="_blank">
+                <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Serviço 7: CFTV -->
+        <div class="col-md-6 col-lg-4">
+          <div class="servico-card">
+            <div class="servico-img">
+              <img src="imagens/produtos/cftv.png" alt="CFTV">
+              <div class="servico-icon">
+                <i class="fas fa-network-wired"></i>
+              </div>
+            </div>
+            <div class="servico-content">
+              <h3>CFTV Completo</h3>
+              <p>Sistema de Circuito Fechado de TV com câmeras, gravadores, cabeamento estruturado e central de monitoramento. Projeto sob medida.</p>
+              <a href="https://wa.me/5561993191969?text=Olá! Tenho interesse em CFTV Completo" class="btn-servico" target="_blank">
+                <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Serviço 8: Motor de Portão -->
+        <div class="col-md-6 col-lg-4">
+          <div class="servico-card">
+            <div class="servico-img">
+              <img src="imagens/produtos/motor.png" alt="Motor de Portão">
+              <div class="servico-icon">
+                <i class="fas fa-cog"></i>
+              </div>
+            </div>
+            <div class="servico-content">
+              <h3>Motor de Portão</h3>
+              <p>Automatização de portões deslizantes e basculantes. Motores robustos, silenciosos, com controle remoto e sensor de segurança.</p>
+              <a href="https://wa.me/5561993191969?text=Olá! Tenho interesse em Motor de Portão" class="btn-servico" target="_blank">
+                <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Não encontrou o que procurava?</h2>
+      <p>Entre em contato para um projeto personalizado de segurança.</p>
+      <a href="https://wa.me/5561993191969" class="btn-cta-large" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        Falar com Especialista
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <h4>WB Segurança Eletrônica</h4>
+          <p>Especialistas em segurança eletrônica em Brasília-DF. Soluções completas em câmeras, alarmes, cerca elétrica e automação.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/wb.segurancaeletronica/" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5561993191969" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4">
+          <h4>Contato</h4>
+          <ul class="footer-contact">
+            <li>
+              <i class="fab fa-whatsapp"></i>
+              <a href="https://wa.me/5561993191969">(61) 99319-1969</a>
             </li>
-
-            <!-- Serviço 2: DVR (Digital Video Recorder) -->
-            <li class="product-item">
-                <a href="#" target="_blank" class="product-link">
-                    <figure class="product-info">
-                        <div class="product-info-img">
-                            <img src="imagens/produtos/dvr.png" alt="DVR moderno com várias portas de conexão">
-                        </div>
-                        <figcaption class="product-info-description">
-                            <h2 class="title">DVR (Digital Video Recorder)</h2>
-                            <p class="description">Gravador digital para armazenamento de imagens em alta qualidade, com acesso remoto e fácil instalação.</p>
-                        </figcaption>
-                        <div class="price-box">
-                            <div class="price">
-                                <div></div>
-                            </div>
-                            <button class="btn btn-buy">Saiba mais <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </figure>
-                </a>
+            <li>
+              <i class="fas fa-phone"></i>
+              <a href="tel:+5561993191969">(61) 99319-1969</a>
             </li>
-<br>
-            <!-- Serviço 3: Sensores -->
-            <li class="product-item">
-                <a href="#" target="_blank" class="product-link">
-                    <figure class="product-info">
-                        <div class="product-info-img">
-                            <img src="imagens/produtos/sensor.png" alt="Sensor de movimento infravermelho montado em parede">
-                        </div>
-                        <figcaption class="product-info-description">
-                            <h2 class="title">Sensores</h2>
-                            <p class="description">Detectores de movimento e presença para aumentar a segurança do seu ambiente, integrados a sistemas de alarme.</p>
-                        </figcaption>
-                        <div class="price-box">
-                            <div class="price">
-                                <div></div>
-                            </div>
-                            <button class="btn btn-buy">Saiba mais <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </figure>
-                </a>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Brasília - DF</span>
             </li>
-
-            <!-- Serviço 4: Cerca Elétrica -->
-            <li class="product-item">
-                <a href="#" target="_blank" class="product-link">
-                    <figure class="product-info">
-                        <div class="product-info-img">
-                            <img src="imagens/produtos/foto-3.png" alt="Cerca elétrica instalada em muro residencial">
-                        </div>
-                        <figcaption class="product-info-description">
-                            <h2 class="title">Cerca Elétrica</h2>
-                            <p class="description">Proteção perimetral com choque elétrico não letal, perfeita para residências e comércios.</p>
-                        </figcaption>
-                        <div class="price-box">
-                            <div class="price">
-                                <div></div>
-                            </div>
-                            <button class="btn btn-buy">Saiba mais <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </figure>
-                </a>
+            <li>
+              <i class="fas fa-clock"></i>
+              <span>Seg-Sáb: 8h às 18h</span>
             </li>
+          </ul>
+        </div>
+        
+        <div class="col-md-6 col-lg-4">
+          <h4>Links Rápidos</h4>
+          <a href="index.html">Home</a>
+          <a href="serviços.html">Serviços</a>
+          <a href="quem-somos.html">Quem Somos</a>
+          <a href="https://wa.me/5561993191969">Orçamento</a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 WB Segurança Eletrônica. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
 
-            <!-- Serviço 5: Alarme -->
-            <li class="product-item">
-                <a href="#" target="_blank" class="product-link">
-                    <figure class="product-info">
-                        <div class="product-info-img">
-                            <img src="imagens/produtos/alarme.png" alt="Painel de alarme residencial com teclado">
-                        </div>
-                        <figcaption class="product-info-description">
-                            <h2 class="title">Alarme</h2>
-                            <p class="description">Sistemas de alarme residencial com sirene e monitoramento, garantindo tranquilidade 24 horas por dia.</p>
-                        </figcaption>
-                        <div class="price-box">
-                            <div class="price">
-                                <div></div>
-                            </div>
-                            <button class="btn btn-buy">Saiba mais <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </figure>
-                </a>
-            </li>
-<br>
-            <!-- Serviço 6: Concertina -->
-            <li class="product-item">
-                <a href="#" target="_blank" class="product-link">
-                    <figure class="product-info">
-                        <div class="product-info-img">
-                            <img src="imagens/produtos/foto-1.png" alt="Concertina dupla instalada sobre muro">
-                        </div>
-                        <figcaption class="product-info-description">
-                            <h2 class="title">Concertina</h2>
-                            <p class="description">Barreira de segurança cortante e resistente, ideal para proteção perimetral de propriedades.</p>
-                        </figcaption>
-                        <div class="price-box">
-                            <div class="price">
-                                <div></div>
-                            </div>
-                            <button class="btn btn-buy">Saiba mais <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </figure>
-                </a>
-            </li>
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/5561993191969" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-            <!-- Serviço 7: CFTV (Circuito Fechado de Televisão) -->
-            <li class="product-item">
-                <a href="#" target="_blank" class="product-link">
-                    <figure class="product-info">
-                        <div class="product-info-img">
-                            <img src="imagens/produtos/cftv.png" alt="Sistema CFTV com câmeras e monitor">
-                        </div>
-                        <figcaption class="product-info-description">
-                            <h2 class="title">CFTV (Circuito Fechado de Televisão)</h2>
-                            <p class="description">Sistema completo de vigilância com câmeras e gravação, perfeito para monitoramento em tempo real.</p>
-                        </figcaption>
-                        <div class="price-box">
-                            <div class="price">
-                                <div></div>
-                            </div>
-                            <button class="btn btn-buy">Saiba mais <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </figure>
-                </a>
-            </li>
-
-            <!-- Serviço 8: Motor de Portão Eletrônico -->
-            <li class="product-item">
-                <a href="#" target="_blank" class="product-link">
-                    <figure class="product-info">
-                        <div class="product-info-img">
-                            <img src="imagens/produtos/motor.png" alt=" estendeMotor de portão eletrônico em portão de correr">
-                        </div>
-                        <figcaption class="product-info-description">
-                            <h2 class="title">Motor de Portão Eletrônico</h2>
-                            <p class="description">Automatização de portões com motores robustos e silenciosos, oferecendo praticidade e segurança.</p>
-                        </figcaption>
-                        <div class="price-box">
-                            <div class="price">
-                                <div></div>
-                            </div>
-                            <button class="btn btn-buy">Saiba mais <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </figure>
-                </a>
-            </li>
-        </ul> <!-- Fim da lista de serviços -->
-
-        <div class="espaco-main-footer"></div>
-    </main> <!-- Fim do Main -->
-
-    <footer> <!-- Início do rodapé -->
-        <div class="fechamento-footer-green"></div>
-        <div class="espaco"></div>
-        <div class="div-footer-content"> <!-- Início do conteúdo do rodapé -->
-            <div class="div-contact"> <!-- Início da área de contatos -->
-                <h2 class="titulo-contact-us">Contact us</h2>
-                <p>• Telefone: +55 61 99319-1969</p>
-                <p>• WhatsApp: +55 61 99319-1969</p>
-            </div> <!-- Fim da área de contatos -->
-            <div class="redes-sociais-footer"> <!-- Início das imagens com links para as redes sociais -->
-                <a href="https://www.instagram.com/wb.segurancaeletronica/profilecard/?igsh=MXRlYWFob2J1NHg5Yw==" target="_blank">
-                    <img width="35px" src="imagens/header-footer/instagram.png" alt="Instagram">
-                </a>
-            </div> <!-- Fim das imagens com links para as redes sociais -->
-        </div> <!-- Fim do conteúdo do rodapé -->
-        <div class="espaco"></div>
-    </footer> <!-- Fim do rodapé -->
-
-    <script src="sou-um-bosta.js"></script>
-    <script src="black-clover.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // Atualizar ano
+    document.querySelector('.footer-bottom p').innerHTML = 
+      `&copy; ${new Date().getFullYear()} WB Segurança Eletrônica. Todos os direitos reservados.`;
+    
+    // Fechar menu mobile ao clicar
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+          navbarCollapse.classList.remove('show');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
